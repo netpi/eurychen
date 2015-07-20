@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  
+  <title><![CDATA[Netpi 日志]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://blog.netpi.me//"/>
+  <updated>2015-07-20T06:05:22.000Z</updated>
+  <id>http://blog.netpi.me//</id>
+  
+  <author>
+    <name><![CDATA[Netpi]]></name>
+    <email><![CDATA[moon@netpi.me]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Dota2 Api nodejs]]></title>
+    <link href="http://blog.netpi.me/nodejs/Dota2-Api-nodejs/"/>
+    <id>http://blog.netpi.me/nodejs/Dota2-Api-nodejs/</id>
+    <published>2015-01-15T16:12:57.000Z</published>
+    <updated>2015-07-20T06:05:22.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500" alt=""></p>
+<h1 id="Dota2">Dota2</h1><p>a node-plugin for dota2 ;</p>
+<p><a href="https://github.com/netpi/dota2" target="_blank" rel="external">github 源码地址</a></p>
+<h2 id="GETTING_A_KEY">GETTING A KEY</h2><p>First off get a dev key from here, <a href="http://steamcommunity.com/dev/apikey" target="_blank" rel="external">http://steamcommunity.com/dev/apikey</a> and login with your Steam account and you will get unique key.<br><a id="more"></a></p>
+<h2 id="Installation">Installation</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install dota --save</span><br></pre></td></tr></table></figure>
+<h2 id="Usage">Usage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Dota2Api = <span class="built_in">require</span>(<span class="string">'dota'</span>).dota2api;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'your key'</span>; <span class="comment">//Your personal API key (from above)</span></span><br><span class="line"><span class="keyword">var</span> language = <span class="string">'zh_CN'</span>;<span class="comment">// The language to retrieve results in (default is en_us) (see http://en.wikipedia.org/wiki/ISO_639-1 for the language codes (first two characters) and http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes for the country codes (last two characters))</span></span><br><span class="line"><span class="keyword">var</span> format = <span class="string">'JSON'</span> The format to retrieve results <span class="keyword">in</span> (<span class="string">"JSON"</span> or <span class="string">"XML"</span>)</span><br><span class="line"><span class="keyword">var</span> dota2api = <span class="keyword">new</span> Dota2Api(key,language,format)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> config=&#123;</span><br><span class="line">  account_id : <span class="string">'232210304'</span>,</span><br><span class="line">  matches_requested : <span class="number">10</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// to get the latest 10 matches played by person whth 32-bit ID 232210304</span></span><br><span class="line">dota2api.getMatchHistory(config,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)&#123;</span><br><span class="line">    <span class="keyword">throw</span> err;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="comment">// you will get the result</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="About_Api">About Api</h2><h4 id="getMatchHistory()">getMatchHistory()</h4><p>sed to get a list of matches played.</p>
+<h5 id="Available_Options">Available Options</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config &#123;</span><br><span class="line">  hero_id: <span class="xml"><span class="tag">&lt; <span class="attribute">id</span> &gt;</span> , // Search for matches with a specific hero being played (hero ID, not name, see HEROES below)</span><br><span class="line">  game_mode: <span class="tag">&lt; <span class="attribute">mode</span> &gt;</span> , // Search for matches of a given mode (see below)</span><br><span class="line">  skill: <span class="tag">&lt; <span class="attribute">skill</span> &gt;</span> , // 0 for any, 1 for normal, 2 for high, 3 for very high skill (default is 0)</span><br><span class="line">  min_players: <span class="tag">&lt; <span class="attribute">count</span> &gt;</span> , // the minimum number of players required in the match</span><br><span class="line">  account_id: <span class="tag">&lt; <span class="attribute">id</span> &gt;</span> , // Search for all matches for the given user (32-bit or 64-bit steam ID)</span><br><span class="line">  league_id: <span class="tag">&lt; <span class="attribute">id</span> &gt;</span> , // matches for a particular league</span><br><span class="line">  start_at_match_id: <span class="tag">&lt; <span class="attribute">id</span> &gt;</span> , // Start the search at the indicated match id, descending</span><br><span class="line">  matches_requested: <span class="tag">&lt; <span class="attribute">n</span> &gt;</span> , // Maximum is 25 matches (default is 25)</span><br><span class="line">  tournament_games_only: <span class="tag">&lt; <span class="attribute">string</span> &gt;</span> // set to only show tournament games</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dota2api.getMatchHistory(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// you will get the result</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="getMatchDetails()">getMatchDetails()</h4><p>Used to get detailed information about a specified match.</p>
+<h5 id="Available_options:">Available options:</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config=&#123;</span><br><span class="line">  match_id=<span class="xml"><span class="tag">&lt;<span class="title">id</span>&gt;</span> // the match's ID</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dota2api.getMatchDetails(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (err) &#123;</span><br><span class="line">    <span class="keyword">throw</span> err;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// you will get the result</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="getHeroes()">getHeroes()</h4><p>Used to get an UP-TO-DATE list of heroes.</p>
+<h5 id="Available_Options-1">Available Options</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config=&#123;</span><br><span class="line">  <span class="comment">// nothing ...</span></span><br><span class="line">  language:<span class="string">'en'</span> <span class="comment">// you can also set language just for this request</span></span><br><span class="line">  format : <span class="string">'XML'</span> <span class="comment">// you can also set format just for this request</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="Result_Field_Format:">Result Field Format:</h5><ul>
+<li>heroes - an array of the heroes:<ul>
+<li>name - the hero’s in-game “code name”</li>
+<li>id - the hero’s numeric ID</li>
+<li>localized_name - the hero’s text name (language specific result - this field is not present if no language is specified)</li>
+</ul>
+</li>
+<li>count - the total number of heroes in the list</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dota2api.getHeroes(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (err) &#123;</span><br><span class="line">     <span class="keyword">throw</span> err;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="comment">// you will get the result</span></span><br><span class="line">     <span class="built_in">console</span>.log(data);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="getLeagueListing()">getLeagueListing()</h4><p>Used to get a list of the tournament leagues that are available for viewing in the client (i.e. you can buy a ticket to them).<br>Intended for use in conjunction with GetLiveLeagueGames.</p>
+<h5 id="Available_Options-2">Available Options</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config=&#123;</span><br><span class="line">  <span class="comment">// nothing ...</span></span><br><span class="line">  language:<span class="string">'en'</span> <span class="comment">// you can also set language just for this request</span></span><br><span class="line">  format : <span class="string">'XML'</span> <span class="comment">// you can also set format just for this request</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dota2api.getLeagueListing(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (err) &#123;</span><br><span class="line">     <span class="keyword">throw</span> err;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="comment">// you will get the result</span></span><br><span class="line">     <span class="built_in">console</span>.log(data);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="getLiveLeagueGames()">getLiveLeagueGames()</h4><p>Used to get a list of the tournament leagues that are available for viewing in the client (i.e. you can buy a ticket to them).<br>Intended for use in conjunction with GetLiveLeagueGames.</p>
+<h5 id="Available_Options-3">Available Options</h5><p>Common options only (see above) - Note that if no language is specified, the API will return the in-game “string” placeholders for all fields marked with (language specific).</p>
+<h5 id="Result_Field_Format:-1">Result Field Format:</h5><ul>
+<li>leagues - an array of the leagues:<ul>
+<li>name - the league’s full name (language specific)</li>
+<li>leagueid - the league’s numeric ID</li>
+<li>escription - a description of the leauge (language specific)</li>
+<li>tournament_url - the url of the tournament’s home page</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">dota2api.getLiveLeagueGames(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (err) &#123;</span><br><span class="line">     <span class="keyword">throw</span> err;</span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">     <span class="comment">// you will get the result</span></span><br><span class="line">     <span class="built_in">console</span>.log(data);</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="getMatchHistoryBySequenceNum()">getMatchHistoryBySequenceNum()</h4><p>Used to get the matches in the order which they were recorded (i.e. sorted ascending by match_seq_num).<br>This means that the first match on the first page of results returned by the call will be the very first public mm-match recorded in the stats.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> config=&#123;</span><br><span class="line">  start_at_match_seq_num=<span class="xml"><span class="tag">&lt;<span class="title">id</span>&gt;</span>,</span><br><span class="line">  matches_requested=<span class="tag">&lt;<span class="title">n</span>&gt;</span></span><br><span class="line">&#125;</span><br><span class="line">dota2api.getMatchHistoryBySequenceNum(config, function(err, data) &#123;</span><br><span class="line">    if (err) &#123;</span><br><span class="line">      throw err;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">      // you will get the result</span><br><span class="line">      console.log(data);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span></span><br></pre></td></tr></table></figure>
+<h2 id="TEST">TEST</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="License">License</h2><p>The MIT license</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500" alt=""></p>
+<h1 id="Dota2">Dota2</h1><p>a node-plugin for dota2 ;</p>
+<p><a href="https://github.com/netpi/dota2">github 源码地址</a></p>
+<h2 id="GETTING_A_KEY">GETTING A KEY</h2><p>First off get a dev key from here, <a href="http://steamcommunity.com/dev/apikey">http://steamcommunity.com/dev/apikey</a> and login with your Steam account and you will get unique key.<br>]]>
+    
+    </summary>
+    
+      <category term="dota2" scheme="http://blog.netpi.me/tags/dota2/"/>
+    
+      <category term="nodejs" scheme="http://blog.netpi.me/tags/nodejs/"/>
+    
+      <category term="nodejs" scheme="http://blog.netpi.me/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Nginx 启动 停止 重启 | 配置主模块&事件模块]]></title>
+    <link href="http://blog.netpi.me/nginx/nginx-conf/"/>
+    <id>http://blog.netpi.me/nginx/nginx-conf/</id>
+    <published>2015-01-02T23:50:11.000Z</published>
+    <updated>2015-01-12T09:23:02.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="1_启动,停止,重启">1 启动,停止,重启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s signal</span><br></pre></td></tr></table></figure>
+<p>signal 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop &#8212; &#24555;&#36895;&#20572;&#27490;&#10;quit &#8212; &#20248;&#38597;&#30340;&#20572;&#27490;&#10;reload &#8212; &#37325;&#21551;&#10;reopen &#8212; &#37325;&#26032;&#25171;&#24320;&#26085;&#24535;&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="2_关于配置文件">2 关于配置文件</h2><h4 id="2-1_配置文件简单说明">2.1 配置文件简单说明</h4><p>配置文件可以看做是Nginx的灵魂，Nginx服务在启动时会读入配置文件，而后续几乎一切动作行为都是按照配置文件中的指令进行的，因此如果将Nginx本身看做一个计算机，那么Nginx的配置文件可以看成是全部的程序指令。</p>
+<p>Nginx配置文件是纯文本文件，你可以用任何文本编辑器如vim或emacs打开它，通常它会在nginx安装目录的conf下</p>
+<p>其中“#”表示此行是注释，由于笔者为了学习扩展开发安装了一个纯净的Nginx，因此配置文件没有经过太多改动。</p>
+<p>Nginx的配置文件是以block的形式组织的，一个block通常使用大括号“{}”表示。block分为几个层级，整个配置文件为main层级，这是最大的层级；在main层级下可以有event、http等层级，而http中又会有server block，server block中可以包含location block。</p>
+<p>每个层级可以有自己的指令（Directive），例如worker_processes是一个main层级指令，它指定Nginx服务的Worker进程数量。有的指令只能在一个层级中配置，如worker_processes只能存在于main中，而有的指令可以存在于多个层级，在这种情况下，子block会继承父block的配置，同时如果子block配置了与父block不同的指令，则会覆盖掉父block的配置。指令的格式是“指令名 参数1  参数2 … 参数N;”，注意参数间可用任意数量空格分隔，最后要加分号。</p>
+<p>在开发Nginx HTTP扩展模块过程中，需要特别注意的是main、server和location三个层级，因为扩展模块通常允许指定新的配置指令在这三个层级中。</p>
+<p>一般来说，一个server block表示一个Host，而里面的一个location则代表一个路由映射规则，这两个block可以说是HTTP配置的核心。配置文件</p>
+<p>下图是Nginx配置文件通常结构图示。</p>
+<p><img src="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300" alt=""></p>
+<h3 id="2-2_主模块">2.2 主模块</h3><blockquote>
+<p>控制 Nginx 的基本功能的指令.</p>
+</blockquote>
+<h4 id="2-2-1_daemon">2.2.1 daemon</h4><p>语法: daemon on | off</p>
+<p>默认值: on</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">daemon  off;</span><br></pre></td></tr></table></figure>
+<p>生产环境中不要使用”daemon”和”master_process”指令，这些选项仅用于开发调试。</p>
+<h4 id="2-2-2_debug_points">2.2.2  debug_points</h4><p>语法: debug_points [stop | abort]</p>
+<p>默认值: none</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debug_points stop;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-3_error_log">2.2.3 error_log</h4><p>语法: error_log file [ debug | info | notice | warn | error | crit ]</p>
+<p>默认值: ${prefix}/logs/error.log</p>
+<p>Nginx 添加 —with-debug 编译参数, 你还能够使用以下配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error_log LOGFILE [ debug_core | debug_alloc | debug_mutex | debug_event&#10;]: | debug_http | debug_imap ;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-4_include">2.2.4 include</h4><p>语法: include file | *</p>
+<p>默认值: none</p>
+<p>你可以在任意地方使用include指令实现配置文件的包含，类似于apache中的include方法，可减少主配置文件d。</p>
+<p>include 指令还支持像下面配置一样的全局包含的方法，例如包含一个目录下所有以”.conf”结尾的文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include vhosts/*.conf;</span><br></pre></td></tr></table></figure></p>
+<p>注意路径受到configure编译参数—prefix=&lt;路径&gt;指令的影响，如果没有指定，Nginx默认是被编译在/usr/local/nginx。</p>
+<p>语法: lock_file file</p>
+<p>默认值: compile-time option<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lock_file  /var/log/lock_file;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-2-5_master_process">2.2.5 master_process</h4><p>语法: master_process on | off</p>
+<p>默认值: on<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">master_process  off;</span><br></pre></td></tr></table></figure></p>
+<p>生产环境中不要使用”daemon”和”master_process”指令，这些选项仅用于开发调试。</p>
+<h4 id="2-2-6_pid">2.2.6 pid</h4><p>语法: pid file</p>
+<p>默认值: compile-time option Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pid /var/log/nginx.pid;</span><br></pre></td></tr></table></figure>
+<p>进程id存储文件。可以使用 kill -HUP cat /var/log/nginx.pid\ 对Nginx进行配置文件重新加载。</p>
+<h4 id="2-2-7_ssl_engine">2.2.7 ssl_engine</h4><p>语法: ssl_engine engine</p>
+<p>默认值: system dependent</p>
+<p>该指令用于指定openssl使用的引擎。你可以通过下面的命令行获知系统目前支持的openssl引擎</p>
+<p>openssl engine -t</p>
+<p>例如 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl engine -t&#10;(cryptodev) BSD cryptodev engine&#10;: [ available ]&#10;(dynamic) Dynamic engine loading support&#10;: [ unavailable ]</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-2-8_timer_resolution">2.2.8 timer_resolution</h4><p>语法: timer_resolution t</p>
+<p>默认值: none</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timer_resolution  100ms;</span><br></pre></td></tr></table></figure></p>
+<p>官方文档的说明:</p>
+<p>The directive allows to decrease number gettimeofday() syscalls. By default gettimeofday() is called after each return from kevent(), epoll, /dev/poll, select(), poll().</p>
+<p>But if you need an exact time in logs when logging $upstream_response_time, or $msec variables, then you should use timer_resolution.</p>
+<h4 id="2-2-9_user">2.2.9 user</h4><p>语法: user user [group]</p>
+<p>默认值: nobody nobody</p>
+<p>指定Nginx Worker进程运行用户，默认是nobody帐号。</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user www users;</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-10_worker_cpu_affinity">2.2.10 worker_cpu_affinity</h4><p>语法: worker_cpu_affinity cpumask [cpumask…]</p>
+<p>默认值: none</p>
+<p>Linux only.</p>
+<p>With this option you can bind the worker process to a CPU, it calls sched_setaffinity().</p>
+<p>仅适用于linux，使用该选项可以绑定worker进程和CPU.</p>
+<p>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker_proceses     4;&#10;worker_cpu_affinity 0001 0010 0100 1000;</span><br></pre></td></tr></table></figure></p>
+<p>Bind each worker process to one CPU only.</p>
+<p>分别给每个worker进程绑定一个CPU.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker_proceses     2;&#10;worker_cpu_affinity 0101 1010;</span><br></pre></td></tr></table></figure>
+<p>Bind the first worker to CPU0/CPU2, bind the second worker to CPU1/CPU3. This is suitable for HTT.</p>
+<p>将CPU0/CPU2绑定给第一个worker进程，将CPU1/CPU3绑定给第二个worker进程。</p>
+<h4 id="2-2-11_worker_priority">2.2.11 worker_priority</h4><p>语法: worker_priority [-] number</p>
+<p>默认值: on</p>
+<p>With this option you can give to all worker processes the priority (nice) you need/wish, it calls setpriority().</p>
+<p>使用该选项可以给所有的worker进程分配优先值。</p>
+<h4 id="2-2-12_worker_processes">2.2.12 worker_processes</h4><p>语法: worker_processes number</p>
+<p>默认值: 1</p>
+<p>e.g.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 5;</span><br></pre></td></tr></table></figure>
+<p>nginx has the ability to use more than one worker process for several reasons:</p>
+<p>nginx可以使用多个worker进程，原因如下：</p>
+<pre><code><span class="number">1</span><span class="class">.to</span> use SMP
+<span class="number">2</span><span class="class">.to</span> decrease latency when workers blockend on disk I/O
+<span class="number">3</span><span class="class">.to</span> limit number of connections per process when <span class="function"><span class="title">select</span><span class="params">()</span></span>/<span class="function"><span class="title">poll</span><span class="params">()</span></span> is used
+</code></pre><p>The worker_processes and worker_connections from the event sections allows you to calculate maxclients value: k</p>
+<p>max_clients = worker_processes * worker_connections</p>
+<h4 id="2-2-13_worker_rlimit_core">2.2.13 worker_rlimit_core</h4><p>语法: worker_rlimit_core size</p>
+<p>默认值: ‘</p>
+<p>Maximum size of core file per worker;</p>
+<h4 id="2-2-14_worker_rlimit_nofile">2.2.14 worker_rlimit_nofile</h4><p>语法: worker_rlimit_nofile limit 默认值: ‘</p>
+<p>Specifies the value for maximum file descriptors that can be opened by this process.</p>
+<p>指定</p>
+<h4 id="2-2-15_worker_rlimit_sigpending">2.2.15 worker_rlimit_sigpending</h4><p>语法: worker_rlimit_sigpending limit 默认值: ‘</p>
+<p>(Since Linux 2.6.8) Specifies the limit on the number of signals that may be queued for the real user ID of the calling process.</p>
+<h4 id="2-2-16_working_directory">2.2.16 working_directory</h4><p>语法: working_directory path 默认值: —prefix</p>
+<p>This is the working directory for the workers. It’s used for core files only. nginx uses absolute paths only, all relative paths in configuration files are relative to —prefix==PATH.</p>
+<h3 id="2-3_事件模块">2.3 事件模块</h3><blockquote>
+<p>设置Nginx处理连接请求<br>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">events &#123;&#10;    worker_connections  1024;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="2-3-1_accept_mutex">2.3.1 accept_mutex</h4><p>Syntax: accept_mutex [ on | off ]</p>
+<p>Default: on</p>
+<p>nginx 使用连接互斥锁进行顺序的accept()系统调用.</p>
+<h4 id="2-3-2_accept_mutex_delay">2.3.2 accept_mutex_delay</h4><p>Syntax: accept_mutex_delay Nms;</p>
+<p>Default: 500ms</p>
+<p>如果一个进程没有互斥锁，它将延迟至少多长时间。默认情况下，延迟是500ms 。</p>
+<h4 id="2-3-3_use">2.3.3 use</h4><p>Syntax: use [ kqueue | rtsig | epoll | /dev/poll | select | poll | eventport ]</p>
+<p>Default:</p>
+<p>如果在./configure的时候指定了不止一种事件模型，那么可以设置其中一个，以便告诉nginx使用哪种事件模型。默认情况下nginx会在./configure时找出最适合系统的事件模型。</p>
+<p>你可以在 这里 查看可用的事件模型以及如何在./configure时激活</p>
+<h4 id="2-3-4_worker_connections">2.3.4 worker_connections</h4><p>Syntax: worker_connections number</p>
+<p>Default:</p>
+<p>通过worker_connections和worker_proceses可以计算出maxclients：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_clients = worker_processes * worker_connections</span><br></pre></td></tr></table></figure></p>
+<p>作为反向代理，max_clients为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_clients = worker_processes * worker_connections/4</span><br></pre></td></tr></table></figure></p>
+<p>Since a browser opens 2 connections by default to a server and nginx uses the fds (file descriptors) from the same pool to connect to the upstream backend</p>
+<blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/nginx/nginx-conf/">http://blog.netpi.me/nginx/nginx-conf/</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="1_启动,停止,重启">1 启动,停止,重启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s signal</span><br></pre></td></tr></table></figure>
+<p>signal 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop &#8212; &#24555;&#36895;&#20572;&#27490;&#10;quit &#8212; &#20248;&#38597;&#30340;&#20572;&#27490;&#10;reload &#8212; &#37325;&#21551;&#10;reopen &#8212; &#37325;&#26032;&#25171;&#24320;&#26085;&#24535;&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>]]>
+    
+    </summary>
+    
+      <category term="nginx" scheme="http://blog.netpi.me/tags/nginx/"/>
+    
+      <category term="nginx" scheme="http://blog.netpi.me/categories/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ueditor:nodejs]]></title>
+    <link href="http://blog.netpi.me/nodejs/ueditor-nodejs/"/>
+    <id>http://blog.netpi.me/nodejs/ueditor-nodejs/</id>
+    <published>2014-10-22T18:48:38.000Z</published>
+    <updated>2015-07-20T05:12:40.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Node-js_:_ueditor">Node.js : ueditor</h1><p><a href="https://github.com/fex-team/ueditor" target="_blank" rel="external">UEditor</a> 官方支持的版本有PHP JSP ASP .NET.</p>
+<p>ueditor for nodejs 可以让你的UEditor支持nodejs</p>
+<h2 id="ueditor@1-0-0_已经全面升级_。">ueditor@1.0.0 已经全面升级 。</h2><p><a href="https://github.com/netpi/ueditor" target="_blank" rel="external">github地址</a></p>
+<h2 id="Installation">Installation</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install ueditor --save</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Usage">Usage</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">var bodyParser = require('body-parser')</span><br><span class="line">var ueditor = require("ueditor")</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;</span><br><span class="line">  extended: true</span><br><span class="line">&#125;))</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line"></span><br><span class="line">// /ueditor 入口地址配置 https://github.com/fex-team/ueditor/blob/dev-1.5.0/ueditor.config.js</span><br><span class="line">// 官方例子是这样的 serverUrl: URL + "php/controller.php"</span><br><span class="line">// 我们要把它改成 serverUrl: URL</span><br><span class="line">app.use("/ueditor", ueditor(path.join(__dirname, 'public'), function(req, res, next) &#123;</span><br><span class="line"></span><br><span class="line">  // ueditor 客户发起上传图片请求</span><br><span class="line"></span><br><span class="line">  if(req.query.action === 'uploadimage')&#123;</span><br><span class="line"></span><br><span class="line">    // 这里你可以获得上传图片的信息</span><br><span class="line">    var foo = req.ueditor;</span><br><span class="line">    console.log(foo.filename); // exp.png</span><br><span class="line">    console.log(foo.encoding); // 7bit</span><br><span class="line">    console.log(foo.mimetype); // image/png</span><br><span class="line"></span><br><span class="line">    // 下面填写你要把图片保存到的路径 （ 以 path.join(__dirname, 'public') 作为根路径）</span><br><span class="line">    var img_url = 'yourpath';</span><br><span class="line">    res.ue_up(img_url); //你只要输入要保存的地址 。保存操作交给ueditor来做</span><br><span class="line">  &#125;</span><br><span class="line">  //  客户端发起图片列表请求</span><br><span class="line">  else if (req.query.action === 'listimage')&#123;</span><br><span class="line">    var dir_url = 'your img_dir'; // 要展示给客户端的文件夹路径</span><br><span class="line">    res.ue_list(dir_url) // 客户端会列出 dir_url 目录下的所有图片</span><br><span class="line">  &#125;</span><br><span class="line">  // 客户端发起其它请求</span><br><span class="line">  else &#123;</span><br><span class="line"></span><br><span class="line">    res.setHeader('Content-Type', 'application/json');</span><br><span class="line">    // 这里填写 ueditor.config.json 这个文件的路径</span><br><span class="line">    res.redirect('/ueditor/ueditor.config.json&#125;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<h2 id="Example">Example</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bodyParser = <span class="built_in">require</span>(<span class="string">'body-parser'</span>)</span><br><span class="line"><span class="keyword">var</span> ueditor = <span class="built_in">require</span>(<span class="string">"ueditor"</span>)</span><br><span class="line">app.use(bodyParser.urlencoded(&#123;</span><br><span class="line">  extended: <span class="literal">true</span></span><br><span class="line">&#125;))</span><br><span class="line">app.use(bodyParser.json());</span><br><span class="line"></span><br><span class="line">app.use(<span class="string">"/ueditor"</span>, ueditor(path.join(__dirname, <span class="string">'public'</span>), <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ueditor 客户发起上传图片请求</span></span><br><span class="line">  <span class="keyword">if</span>(req.query.action === <span class="string">'uploadimage'</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> foo = req.ueditor;</span><br><span class="line">    <span class="keyword">var</span> date = <span class="keyword">new</span> Data();</span><br><span class="line">    <span class="keyword">var</span> imgname = req.ueditor.filename;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> img_url = <span class="string">'/images/ueditor/'</span>;</span><br><span class="line">    res.ue_up(img_url); <span class="comment">//你只要输入要保存的地址 。保存操作交给ueditor来做</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//  客户端发起图片列表请求</span></span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (req.query.action === <span class="string">'listimage'</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> dir_url = <span class="string">'/images/ueditor/'</span>;</span><br><span class="line">    res.ue_list(dir_url);  <span class="comment">// 客户端会列出 dir_url 目录下的所有图片</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 客户端发起其它请求</span></span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">    res.setHeader(<span class="string">'Content-Type'</span>, <span class="string">'application/json'</span>);</span><br><span class="line">    res.redirect(<span class="string">'/ueditor/ueditor.config.json'</span>)&#125;</span><br><span class="line">&#125;));</span><br></pre></td></tr></table></figure>
+<h2 id="源码">源码</h2><blockquote>
+<p><a href="https://github.com/netpi/ueditor" target="_blank" rel="external">uditor:nodejs</a></p>
+</blockquote>
+<h2 id="*_License">* License</h2><blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/nodejs/ueditor-nodejs">http://blog.netpi.me/nodejs/ueditor-nodejs</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Node-js_:_ueditor">Node.js : ueditor</h1><p><a href="https://github.com/fex-team/ueditor">UEditor</a> 官方支持的版本有PHP JSP ASP .NET.</p>
+<p>ueditor for nodejs 可以让你的UEditor支持nodejs</p>
+<h2 id="ueditor@1-0-0_已经全面升级_。">ueditor@1.0.0 已经全面升级 。</h2><p><a href="https://github.com/netpi/ueditor">github地址</a></p>
+<h2 id="Installation">Installation</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install ueditor --save</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="nodejs" scheme="http://blog.netpi.me/tags/nodejs/"/>
+    
+      <category term="ueditor" scheme="http://blog.netpi.me/tags/ueditor/"/>
+    
+      <category term="nodejs" scheme="http://blog.netpi.me/categories/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[安装 Nginx 服务器]]></title>
+    <link href="http://blog.netpi.me/nginx/nginx-Installation/"/>
+    <id>http://blog.netpi.me/nginx/nginx-Installation/</id>
+    <published>2014-10-20T02:10:19.000Z</published>
+    <updated>2014-10-21T14:49:30.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="1_,安装前准备">1 ,安装前准备</h2><p>安装nginx之前我们通过 yum 安装两个软件</p>
+<p>1 pcre - 为了有rewrite功能，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install pcre</span><br></pre></td></tr></table></figure>
+<p>2 openssl - 为了支持ssl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install openssl</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="2_,安装Nginx">2 ,安装Nginx</h2><h3 id="2-1_下载_Nginx">2.1 下载 Nginx</h3><p>我们用wget下载1.6.2 稳定版</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.6.2.tar.gz</span><br></pre></td></tr></table></figure>
+<h3 id="2-2_解压并且安装">2.2 解压并且安装</h3><p>下载完成之后 解压文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf nginx-1.6.2.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压完成之后 , 开始编译安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;# cd nginx-1.6.2&#10;&#10;&#10;# ./configure --prefix=/usr/local/nginx-1.6.2 \&#10;--with-http_ssl_module --with-http_spdy_module \&#10;--with-http_stub_status_module --with-pcre</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make install</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-1_安装过程中常见错误1">2.2.1 安装过程中常见错误1</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure: error: the HTTP rewrite module requires the PCRE library.</span><br></pre></td></tr></table></figure>
+<p>那么我们要安装pcre-devel来解决问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum -y install pcre-deve</span><br></pre></td></tr></table></figure>
+<h4 id="2-2-2_安装过程中常见错误_2">2.2.2 安装过程中常见错误 2</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/configure: error: the HTTP cache module requires md5 functions&#10;from OpenSSL library.   You can either disable the module by using&#10;--without-http-cache option, or install the OpenSSL library into the system,&#10;or build the OpenSSL library statically from the source with nginx by using&#10;--with-http_ssl_module --with-openssl=&#60;path&#62; options.</span><br></pre></td></tr></table></figure>
+<p>解决办法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<h2 id="2-3_启动Nginx">2.3 启动Nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/nginx-1.6.2/sbin/nginx&#10;&#10;curl http://localhost</span><br></pre></td></tr></table></figure>
+<p>发现Nginx 服务已经正常启动 : )</p>
+<h2 id="License">License</h2><blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/nginx/nginx-Installation/">http://blog.netpi.me/nginx/nginx-Installation/</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="1_,安装前准备">1 ,安装前准备</h2><p>安装nginx之前我们通过 yum 安装两个软件</p>
+<p>1 pcre - 为了有rewrite功能，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install pcre</span><br></pre></td></tr></table></figure>
+<p>2 openssl - 为了支持ssl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># yum install openssl</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="code" scheme="http://blog.netpi.me/tags/code/"/>
+    
+      <category term="nginx" scheme="http://blog.netpi.me/tags/nginx/"/>
+    
+      <category term="nginx" scheme="http://blog.netpi.me/categories/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[鱼丸豆角]]></title>
+    <link href="http://blog.netpi.me/cook/bean-fish/"/>
+    <id>http://blog.netpi.me/cook/bean-fish/</id>
+    <published>2014-10-19T12:03:57.000Z</published>
+    <updated>2014-10-21T05:11:16.000Z</updated>
+    <content type="html"><![CDATA[<p>前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。</p>
+<p>结果半路杀出一盘 豆角</p>
+<p>奇妙的味道 让我根本停不下来，当然结局很惨 - 白嘴吃豆角 。饱了！最后看着满桌螃蟹、牛排吃不下。我靠 ！！！</p>
+<p>今天我就尝试让那个味道重现 来一道《鱼丸豆角》<br><a id="more"></a></p>
+<h2 id="1，食材">1，食材</h2><p>食材很简单</p>
+<h3 id="1-1_主料">1.1 主料</h3><p>1 鱼丸 、小火腿 （共150g）<br>2 豇豆 （350g 就是没有筋的那种豆角）</p>
+<h3 id="1-2_辅料">1.2 辅料</h3><p>辅料 ：八角 、花椒 、姜片、红辣椒、大蒜 、花生油 、十三香 、鸡精 、食言 、红油（辣椒油）</p>
+<h2 id="2，开始">2，开始</h2><p>豆角洗净 切成3厘米左右长度 备用</p>
+<p>因为买的是冷冻的鱼丸 所以要先放水里解冻</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/1.jpg" alt=""></p>
+<h3 id="2-1_豆角腌制">2.1 豆角腌制</h3><p>这道菜的关键就是如何让花椒和八角的味道融入豆角当中。</p>
+<p>1，首先 制作腌制的汁料</p>
+<p>锅内加油，油热之后将切好的姜片、花椒、八角、大蒜、红辣椒 放入锅内爆炒至 飘香</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/2.jpg" alt=""></p>
+<p>2，然后将热油倒进豆角，开始腌制1个小时</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/3.jpg" alt=""></p>
+<p>期间可以把鱼丸火腿洗净切开 备用</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/4.jpg" alt=""></p>
+<h3 id="2-2_下锅爆炒">2.2 下锅爆炒</h3><p>腌制好了之后，就开始下锅炒了</p>
+<p>锅内加入少许的油 ，十三香 、大蒜 。然后将腌制好的豆角全部倒入锅内爆炒（起码10分钟）</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/5.jpg" alt=""></p>
+<p>爆炒至豆角 有皱皱的感觉 ，加入鱼丸、香肠，继续爆炒，并且添加适量的食盐（大概5分钟）</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/6.jpg" alt=""></p>
+<p>爆炒至已经有某些鱼丸底部 变硬变黄 ； 关火，加鸡精、红油、香油 。翻炒出锅</p>
+<p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/7.jpg" alt=""></p>
+<p>整个厨房都飘着香味！吃起来味道么，恩，你做了就知道 ！！！</p>
+<h2 id="*_License">* License</h2><blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/cook/bean-fish">http://blog.netpi.me/cook/bean-fish</a></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。</p>
+<p>结果半路杀出一盘 豆角</p>
+<p>奇妙的味道 让我根本停不下来，当然结局很惨 - 白嘴吃豆角 。饱了！最后看着满桌螃蟹、牛排吃不下。我靠 ！！！</p>
+<p>今天我就尝试让那个味道重现 来一道《鱼丸豆角》<br>]]>
+    
+    </summary>
+    
+      <category term="cook" scheme="http://blog.netpi.me/tags/cook/"/>
+    
+      <category term="cook" scheme="http://blog.netpi.me/categories/cook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[hexo + github + 多说 来搭建免费博客]]></title>
+    <link href="http://blog.netpi.me/%E5%AE%9E%E7%94%A8/hexo/"/>
+    <id>http://blog.netpi.me/实用/hexo/</id>
+    <published>2014-10-19T04:56:58.000Z</published>
+    <updated>2015-01-12T09:03:26.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="1_要用到的模块">1 要用到的模块</h2><p><a href="http://hexo.io/" target="_blank" rel="external">hexo</a>  是一款快速、简单、并且强大的博客博客模板框架 - 基于nodejs 。</p>
+<p><a href="http://github.com" target="_blank" rel="external">github</a> 如果你是程序员 那么github就不说了。不了解的可以点击这里<a href="http://baike.baidu.com/view/3366456.htm?fr=aladdin" target="_blank" rel="external">github百度百科</a></p>
+<p><a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 可以让你博客在没有动态服务器的情况下 ， 依然可以加入评论系统。<br><a id="more"></a></p>
+<h2 id="2_安装_hexo_生成blog">2 安装 hexo 生成blog</h2><h3 id="2-1_安装与简单发布">2.1 安装与简单发布</h3><p>首先 , 我们要现在通过npm安装 hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo -g</span><br></pre></td></tr></table></figure>
+<p>安装好了之后 我们就可以初始化一个blog 并且启动服务器了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init blog&#10;$ cd blog&#10;$ npm install&#10;$ hexo server</span><br></pre></td></tr></table></figure>
+<p>此时文件目录为</p>
+<ul>
+<li>blog<ul>
+<li>_config_yml    // 注配置文件</li>
+<li>db.json        // 数据</li>
+<li>debug.log      // 调试日志</li>
+<li>_node_mudules  // nodejs 相关依赖</li>
+<li>package.json   // 配置依赖</li>
+<li>scaffolds      // 脚手架 -  也就是一个工具模板</li>
+<li>source         // 存放blog正文的地方</li>
+<li>themes         // 存放皮肤的地方</li>
+</ul>
+</li>
+</ul>
+<p>默认访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a></p>
+<h3 id="2-2_页面打不开">2.2 页面打不开</h3><p>如果你的电脑没有翻-墙 可能会打不开页面。因为页面中默认使用了ajax.google.com 下的js包。因此我们要把包删掉</p>
+<p>解决办法：</p>
+<p>进入你刚新建好的 blog根目录 ，进入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes/landscape/layout/_partial</span><br></pre></td></tr></table></figure>
+<p>1，找到 after-footer.ejs</p>
+<p>把</p>
+<blockquote>
+<p>&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js&quot;&gt; &lt;/script&gt;</p>
+</blockquote>
+<p>替换成</p>
+<blockquote>
+<p>&lt;script src=&quot;<a href="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js" target="_blank" rel="external">http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js</a>“ &gt;  &lt;/script&gt;</p>
+</blockquote>
+<p>2，找到 header.ejs</p>
+<p>注释掉或者删掉 下面这句css引用</p>
+<blockquote>
+<p>&lt;link href=&quot;//fonts.googleapis.com/css?family=Source+Code+Pro&quot; rel=”stylesheet” type=”text/css”&gt;</p>
+</blockquote>
+<p>重新 hexo server 之后。访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就会看到blog主页了。</p>
+<h3 id="2-3_新建文章">2.3 新建文章</h3><p>当我们想写一篇blog时 在blog根目录下我们可以通过 hexo new  &lt;title&gt; 指令来实现</p>
+<p>例如我们想新建一篇主题为hello的blog</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new hello</span><br></pre></td></tr></table></figure>
+<p>输出信息如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[info] File created at /Users/Night/Web/projects/java/temp/blog-test/source/_posts/hello.md</span><br></pre></td></tr></table></figure>
+<p>hexo会在 source/_posts/ 下新建hello.md 文件。</p>
+<p>编辑 hello.md 就是编辑你的blog内容了 — <a href="http://www.ituring.com.cn/article/775" target="_blank" rel="external">markdown语法</a></p>
+<p>hello.md 的文档和目录可以这样添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title: hexo&#12289;github&#12289;&#22810;&#35828;&#12289;&#25645;&#24314;&#20813;&#36153;&#21338;&#23458;&#10;date: 2014-10-19 12:56:58&#10;tags:&#10;- tag1&#10;- tag2&#10;- tag3&#10;categories:&#10;- &#30446;&#24405;&#10;__&#10;&#10;// &#20320;&#30340;&#20869;&#23481;&#10;&#60;!--more--&#62; // &#20197;&#19978;&#20026;&#25688;&#35201;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-4_静态处理">2.4 静态处理</h3><p>因为我们的blog要部署到github静态服务器上面，所有我们还要将页面进行静态化</p>
+<p>hexo 为我们提供了 hexo g 的方法。进入blog根目录 执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<p>会有如下提示信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[info] Files loaded in 0.081s&#10;[create] Generated: archives/index.html (48ms)&#10;[create] Generated: archives/2014/index.html (10ms)&#10;[create] Generated: archives/2014/10/index.html (7ms)&#10;[create] Generated: index.html (9ms)&#10;[create] Generated: 2014/10/19/hello-world/index.html (19ms)&#10;[create] Generated: js/script.js (5ms)&#10;[create] Generated: css/style.css (434ms)&#10;[create] Generated: css/fonts/FontAwesome.otf (1ms)&#10;[create] Generated: css/fonts/fontawesome-webfont.eot (2ms)&#10;[create] Generated: css/fonts/fontawesome-webfont.svg (2ms)&#10;[create] Generated: css/fonts/fontawesome-webfont.ttf (4ms)&#10;[create] Generated: css/fonts/fontawesome-webfont.woff (1ms)&#10;[create] Generated: css/images/banner.jpg (3ms)&#10;[create] Generated: fancybox/blank.gif (2ms)&#10;[create] Generated: fancybox/fancybox_loading.gif (1ms)&#10;[create] Generated: fancybox/fancybox_loading@2x.gif (1ms)&#10;[create] Generated: fancybox/fancybox_overlay.png (1ms)&#10;[create] Generated: fancybox/fancybox_sprite.png (0ms)&#10;[create] Generated: fancybox/fancybox_sprite@2x.png (1ms)&#10;[create] Generated: fancybox/jquery.fancybox.css (0ms)&#10;[create] Generated: fancybox/jquery.fancybox.js (1ms)&#10;[create] Generated: fancybox/jquery.fancybox.pack.js (1ms)&#10;[create] Generated: fancybox/helpers/fancybox_buttons.png (1ms)&#10;[create] Generated: fancybox/helpers/jquery.fancybox-buttons.css (1ms)&#10;[create] Generated: fancybox/helpers/jquery.fancybox-buttons.js (0ms)&#10;[create] Generated: fancybox/helpers/jquery.fancybox-media.js (1ms)&#10;[create] Generated: fancybox/helpers/jquery.fancybox-thumbs.css (2ms)&#10;[create] Generated: fancybox/helpers/jquery.fancybox-thumbs.js (1ms)&#10;[info] 28 files generated in 0.565s</span><br></pre></td></tr></table></figure>
+<p>blog根目录下会生成public文件夹-里面就是刚才生成的静态文件</p>
+<p>hexo 的详细实用说明请参看<a href="http://hexo.io/docs/" target="_blank" rel="external">官方文档</a></p>
+<h2 id="3_将blog部署到_github">3 将blog部署到 github</h2><h3 id="3-1_部署到github">3.1 部署到github</h3><p>部署到github 非常简单。因为hexo已经为你集成好了发布到github的配置。</p>
+<p>我们只需要 修改 blog 目录下的 _config.yml 文件</p>
+<p>打开 _config.yml 找到如下配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">deploy:&#10;  type: github&#10;  repo: https://github.com/yourname/blog.git</span><br></pre></td></tr></table></figure>
+<p>修改 repo : ‘your github repo’</p>
+<p>回到 blog 目录 执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<p>你会发现public 目录下的页面已经发布到github gh-pages 分支了</p>
+<p>往后我们要做的就是用自己的域名指向 github。</p>
+<h3 id="3-2_域名指向">3.2 域名指向</h3><h4 id="3-2-1_主域名指向">3.2.1 主域名指向</h4><p>例如 我的域名为 netpi.me</p>
+<p>1 ，我们要在github blog项目下新建一个CNAME文件 内容为 netpi.me</p>
+<p>2 ，将我们得域名A 记录到 207.97.227.245 这个ip</p>
+<p>域名解析完成后我们 访问netpi.me 就是我们的blog了</p>
+<h4 id="3-2-2_子域名指向">3.2.2 子域名指向</h4><p>例如 我的域名为 blog.netpi.me</p>
+<p>1 ，我们要在github blog项目下新建一个CNAME文件 内容为 blog.netpi.me</p>
+<p>2 ，将我们得域名CNAME 到 ‘你的github名’.github.io (例如 netpi.github.io)</p>
+<p>域名解析完成后我们 访问blog.netpi.me 就是我们的blog了</p>
+<p>解析期间我们可以用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping netpi.me</span><br></pre></td></tr></table></figure></p>
+<p>来方便的获知 解析情况。</p>
+<h2 id="4_插件安装">4 插件安装</h2><h3 id="4-1_多说">4.1 多说</h3><p>评论插件多说为 hexo量身打造了一套解决方案</p>
+<p><a href="http://dev.duoshuo.com/threads/541d3b2b40b5abcd2e4df0e9" target="_blank" rel="external">Hexo使用多说教程</a></p>
+<p><a href="http://duoshuo.com/create-site/" target="_blank" rel="external">站点创建地址</a></p>
+<h3 id="4-2_rss">4.2 rss</h3><p>rss的安装非常简单 ，已经有人做好了插件，安装只需一步。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-feed</span><br></pre></td></tr></table></figure>
+<p>启动服务器，用浏览器打开 <a href="http://localhost:4000/atom.xml，" target="_blank" rel="external">http://localhost:4000/atom.xml，</a> 就可以看到RSS已经生效了。</p>
+<h3 id="4-2_sitemap">4.2 sitemap</h3><p>同样是一条命令，就可以完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap</span><br></pre></td></tr></table></figure>
+<p>启动服务器，用浏览器打开 用浏览器打开 <a href="http://localhost:4000/sitemap.xml" target="_blank" rel="external">http://localhost:4000/sitemap.xml</a> 发现site已经生效</p>
+<h2 id="*_License">* License</h2><blockquote>
+<blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/实用/hexo">http://blog.netpi.me/实用/hexo</a></p>
+</blockquote>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="1_要用到的模块">1 要用到的模块</h2><p><a href="http://hexo.io/">hexo</a>  是一款快速、简单、并且强大的博客博客模板框架 - 基于nodejs 。</p>
+<p><a href="http://github.com">github</a> 如果你是程序员 那么github就不说了。不了解的可以点击这里<a href="http://baike.baidu.com/view/3366456.htm?fr=aladdin">github百度百科</a></p>
+<p><a href="http://duoshuo.com/">多说</a> 可以让你博客在没有动态服务器的情况下 ， 依然可以加入评论系统。<br>]]>
+    
+    </summary>
+    
+      <category term="github" scheme="http://blog.netpi.me/tags/github/"/>
+    
+      <category term="hexo" scheme="http://blog.netpi.me/tags/hexo/"/>
+    
+      <category term="多说" scheme="http://blog.netpi.me/tags/%E5%A4%9A%E8%AF%B4/"/>
+    
+      <category term="实用" scheme="http://blog.netpi.me/categories/%E5%AE%9E%E7%94%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[你的，我的blog]]></title>
+    <link href="http://blog.netpi.me/%E6%97%B6%E9%97%B4/hello-world-1/"/>
+    <id>http://blog.netpi.me/时间/hello-world-1/</id>
+    <published>2014-10-18T19:03:39.000Z</published>
+    <updated>2014-10-18T22:09:29.000Z</updated>
+    <content type="html"><![CDATA[<p>忙活了一整天 blog终于算是完成了吧 ！hexo + 多说 + github 。免费搭建可以评论的blog系统 感觉很酷。</p>
+<p>github 300M的免费空间速度还是能接受滴，也不会觉得很卡拉 。</p>
+<p><a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 这个评论插件真的太给力</p>
+<p>天亮… 6点了 ，这一晚真上没白忙活呀 。刚才又加入了百度统计，rss订阅。暂时先这样，碎觉了 ！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>忙活了一整天 blog终于算是完成了吧 ！hexo + 多说 + github 。免费搭建可以评论的blog系统 感觉很酷。</p>
+<p>github 300M的免费空间速度还是能接受滴，也不会觉得很卡拉 。</p>
+<p><a href="http://duoshuo.]]>
+    </summary>
+    
+      <category term="第一次" scheme="http://blog.netpi.me/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1/"/>
+    
+      <category term="时间" scheme="http://blog.netpi.me/categories/%E6%97%B6%E9%97%B4/"/>
+    
+  </entry>
+  
+</feed>
