@@ -1,16 +1,11 @@
 <!doctype html>
-
-
-
+<html class="theme-next use-motion theme-next-mist">
+<head>
   
 
-
-<html class="theme-next mist use-motion">
-<head>
-  <meta charset="UTF-8"/>
+<meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -23,28 +18,25 @@
 
 
 
-
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
 
 
 
   
+    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   
-  <link href="/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
+<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
 
+    <meta name="description" content="分享代码 - 陈东泽-Netpi moon@netpi.me" />
 
-
-
-<link href="/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="github,hexo,多说," />
-
-
 
 
 
@@ -52,12 +44,7 @@
 
 
 
-
   <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
-
-
-
-
 
 
 <meta name="description" content="1 要用到的模块hexo  是一款快速、简单、并且强大的博客博客模板框架 - 基于nodejs 。
@@ -78,21 +65,12 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 多说 可以让你博客在没有动态服务器的情况下 ， 依然可以加入评论系统。">
 
 
-
 <script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
   var CONFIG = {
     scheme: 'Mist',
-    sidebar: "post",
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: 0,
-      author: '博主'
-    }
+    sidebar: 'post'
   };
 </script>
-
 
 
 
@@ -101,6 +79,15 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
   
 
 
@@ -108,14 +95,7 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
 
 
-
-
-
-
-  
-  
-
-  <div class="container one-collumn  page-post-detail ">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -144,13 +124,13 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
   
 
   
-    <ul id="menu" class="menu">
+    <ul id="menu" class="menu ">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-home"></i> <br />
             
             首页
           </a>
@@ -160,7 +140,7 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-archive"></i> <br />
             
             归档
           </a>
@@ -170,13 +150,14 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-tags"></i> <br />
             
             标签
           </a>
         </li>
       
 
+      
       
     </ul>
   
@@ -189,17 +170,11 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
+        <div id="content" class="content"> 
 
   <div id="posts" class="posts-expand">
     
 
-  
-  
-
-  
   
   
 
@@ -222,10 +197,7 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
         <div class="post-meta">
           <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
+            发表于
             <time itemprop="dateCreated" datetime="2014-10-19T12:56:58+08:00" content="Oct 19 2014">
               Oct 19 2014
             </time>
@@ -233,11 +205,7 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/实用/" itemprop="url" rel="index">
@@ -265,22 +233,18 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
           
 
-          
-          
-
-          
         </div>
       </header>
     
 
 
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body">
 
       
       
 
       
-        <h2 id="1_要用到的模块">1 要用到的模块</h2><p><a href="http://hexo.io/" target="_blank" rel="external">hexo</a>  是一款快速、简单、并且强大的博客博客模板框架 - 基于nodejs 。</p>
+        <span itemprop="articleBody"><h2 id="1_要用到的模块">1 要用到的模块</h2><p><a href="http://hexo.io/" target="_blank" rel="external">hexo</a>  是一款快速、简单、并且强大的博客博客模板框架 - 基于nodejs 。</p>
 <p><a href="http://github.com" target="_blank" rel="external">github</a> 如果你是程序员 那么github就不说了。不了解的可以点击这里<a href="http://baike.baidu.com/view/3366456.htm?fr=aladdin" target="_blank" rel="external">github百度百科</a></p>
 <p><a href="http://duoshuo.com/" target="_blank" rel="external">多说</a> 可以让你博客在没有动态服务器的情况下 ， 依然可以加入评论系统。<br><a id="more"></a></p>
 <h2 id="2_安装_hexo_生成blog">2 安装 hexo 生成blog</h2><h3 id="2-1_安装与简单发布">2.1 安装与简单发布</h3><p>首先 , 我们要现在通过npm安装 hexo</p>
@@ -369,21 +333,7 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 <p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/实用/hexo">http://blog.netpi.me/实用/hexo</a></p>
 </blockquote>
 </blockquote>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
+</span>
       
     </div>
 
@@ -432,24 +382,23 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
     </div>
   </div>
 
+ </div>
 
-          </div>
-          
-
-
-          
-  <div class="comments" id="comments">
-    
-      <div class="ds-thread" data-thread-key="实用/hexo/"
-           data-title="hexo + github + 多说 来搭建免费博客" data-url="http://blog.netpi.me/实用/hexo/">
-      </div>
-    
-  </div>
-
-
-        </div>
         
-          
+
+        
+          <div class="comments" id="comments">
+            
+              <div class="ds-thread" data-thread-key="实用/hexo/"
+                   data-title="hexo + github + 多说 来搭建免费博客" data-url="http://blog.netpi.me/实用/hexo/">
+              </div>
+            
+          </div>
+        
+      </div>
+
+      
+        
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -477,12 +426,10 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
 
       <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="Netpi" />
+          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Netpi" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Netpi</p>
-          <p class="site-description motion-element" itemprop="description">分享代码 - 陈东泽-Netpi moon@netpi.me</p>
         </div>
+        <p class="site-description motion-element" itemprop="description">分享代码 - 陈东泽-Netpi moon@netpi.me</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -491,30 +438,26 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
             </a>
           </div>
 
-          
-            <div class="site-state-item site-state-categories">
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-name">分类</span>
               
-                <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">分类</span>
-              
-            </div>
-          
+          </div>
 
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">11</span>
-                <span class="site-state-item-name">标签</span>
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">标签</span>
               </a>
-            </div>
-          
+          </div>
 
         </nav>
 
         
           <div class="feed-link motion-element">
             <a href="/atom.xml" rel="alternate">
-              <i class="fa fa-rss"></i>
+              <i class="menu-item-icon icon-next-feed"></i>
               RSS
             </a>
           </div>
@@ -524,16 +467,14 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
           
             
               <span class="links-of-author-item">
-                <a href="http://github.com/netpi" target="_blank" title="GitHub">
-                  
-                  GitHub
+                <a href="http://github.com/netpi" target="_blank">
+                  <i class="fa fa-github"></i> GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
-                  
-                  linkedin
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank">
+                  <i class="fa fa-linkedin"></i> linkedin
                 </a>
               </span>
             
@@ -543,41 +484,35 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
         
 
-        
-        
-          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
-            <div class="links-of-blogroll-title">
-              <i class="fa  fa-fw fa-globe"></i>
-              友情连接
-            </div>
-            <ul class="links-of-blogroll-list">
-              
-                <li class="links-of-blogroll-item">
-                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
-                </li>
-              
-            </ul>
-          </div>
-        
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情连接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://joehill.me" target="_blank">Joehill</a>
+              </span>
+            
+          
+        </div>
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
-            
-              
             
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_要用到的模块"><span class="nav-number">1.</span> <span class="nav-text">1 要用到的模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2_安装_hexo_生成blog"><span class="nav-number">2.</span> <span class="nav-text">2 安装 hexo 生成blog</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_安装与简单发布"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 安装与简单发布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_页面打不开"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 页面打不开</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3_新建文章"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 新建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4_静态处理"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 静态处理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3_将blog部署到_github"><span class="nav-number">3.</span> <span class="nav-text">3 将blog部署到 github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1_部署到github"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 部署到github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2_域名指向"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 域名指向</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-1_主域名指向"><span class="nav-number">3.2.1.</span> <span class="nav-text">3.2.1 主域名指向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-2_子域名指向"><span class="nav-number">3.2.2.</span> <span class="nav-text">3.2.2 子域名指向</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4_插件安装"><span class="nav-number">4.</span> <span class="nav-text">4 插件安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1_多说"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 多说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2_rss"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 rss</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2_sitemap"><span class="nav-number">4.3.</span> <span class="nav-text">4.2 sitemap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#*_License"><span class="nav-number">5.</span> <span class="nav-text">* License</span></a></li></ol></div>
             
           </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
         </section>
       
 
@@ -585,18 +520,16 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
   </aside>
 
 
-        
-      </div>
+      
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
+      <div class="footer-inner"> <div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="fa fa-heart"></i>
+    <i class="icon-next-heart fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Netpi</span>
 </div>
@@ -612,82 +545,19 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
   </a>
 </div>
 
-        
 
-        
-      </div>
+ </div>
     </footer>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
-    </div>
+    <div class="back-to-top"></div>
   </div>
 
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-  
-  <script type="text/javascript" src="//jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="//fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="//jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="//velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="//velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="//fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=0.4.5.2"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=0.4.5.2"></script>
-
-
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
-
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.4.5.2"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=0.4.5.2"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.4.5.2"></script>
-
-
-
-  
+    
 
   
     
@@ -705,26 +575,220 @@ github 如果你是程序员 那么github就不说了。不了解的可以点击
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
-
-  
     
-    <script src="//ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
+     
 
 
-
-
-
-
+    
   
   
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
+
+
+
+
+  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+        displaySidebar();
+      }
+    }
+  });
+</script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+      if (isMobile()) {
+        FastClick.attach(document.body);
+      }
+
+      motionIntegrator.bootstrap();
+    });
+  </script>
+
+  
   
 
   
-
   
 
+  
+  <script type="text/javascript" src="/js/lazyload.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $("#posts").find('img').lazyload({
+        placeholder: "/images/loading.gif",
+        effect: "fadeIn"
+      });
+    });
+  </script>
 </body>
 </html>
