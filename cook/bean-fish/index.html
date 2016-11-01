@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,47 +23,73 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
 
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
-<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
 
-    <meta name="description" content="分享代码 - 陈东泽-Netpi moon@netpi.me" />
 
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="cook," />
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Netpi 日志" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。
-结果半路杀出一盘 豆角
-奇妙的味道 让我根本停不下来，当然结局很惨 - 白嘴吃豆角 。饱了！最后看着满桌螃蟹、牛排吃不下。我靠 ！！！
-今天我就尝试让那个味道重现 来一道《鱼丸豆角》">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="给你做一份鱼丸豆角吃吧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="鱼丸豆角">
-<meta property="og:url" content="http://blog.netpi.me/cook/bean-fish/index.html">
-<meta property="og:site_name" content="Netpi 日志">
-<meta property="og:description" content="前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。
-结果半路杀出一盘 豆角
-奇妙的味道 让我根本停不下来，当然结局很惨 - 白嘴吃豆角 。饱了！最后看着满桌螃蟹、牛排吃不下。我靠 ！！！
-今天我就尝试让那个味道重现 来一道《鱼丸豆角》">
+<meta property="og:url" content="http://netpi.me/cook/bean-fish/index.html">
+<meta property="og:site_name" content="东泽 - Netpi">
+<meta property="og:description" content="给你做一份鱼丸豆角吃吧">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/1.jpg">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/2.jpg">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/3.jpg">
@@ -66,38 +97,39 @@
 <meta property="og:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/5.jpg">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/6.jpg">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/7.jpg">
-<meta property="og:updated_time" content="2014-10-21T05:11:16.000Z">
+<meta property="og:updated_time" content="2016-11-01T09:26:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="鱼丸豆角">
-<meta name="twitter:description" content="前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。
-结果半路杀出一盘 豆角
-奇妙的味道 让我根本停不下来，当然结局很惨 - 白嘴吃豆角 。饱了！最后看着满桌螃蟹、牛排吃不下。我靠 ！！！
-今天我就尝试让那个味道重现 来一道《鱼丸豆角》">
+<meta name="twitter:description" content="给你做一份鱼丸豆角吃吧">
+<meta name="twitter:image" content="http://bnetpi.qiniudn.com/cook/bean-fish/1.jpg">
+
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
   };
 </script>
 
 
 
-  <title> 鱼丸豆角 | Netpi 日志 </title>
+
+  <link rel="canonical" href="http://netpi.me/cook/bean-fish/"/>
+
+
+  <title> 鱼丸豆角 | 东泽 - Netpi </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -105,17 +137,26 @@
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Netpi 日志</span>
+      <span class="site-title">东泽 - Netpi</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -134,13 +175,11 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home"></i> <br />
             
             首页
           </a>
@@ -150,8 +189,6 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive"></i> <br />
-            
             归档
           </a>
         </li>
@@ -160,14 +197,19 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags"></i> <br />
-            
             标签
           </a>
         </li>
       
-
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
       
+
       
     </ul>
   
@@ -180,7 +222,9 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -188,7 +232,11 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -207,15 +255,22 @@
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2014-10-19T20:03:57+08:00" content="Oct 19 2014">
-              Oct 19 2014
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2014-10-19T20:03:57+08:00" content="2014-10-19">
+              2014-10-19
             </time>
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/cook/" itemprop="url" rel="index">
@@ -243,28 +298,33 @@
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><p>前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。</p>
+        <p><blockquote class="blockquote-center"><br>给你做一份鱼丸豆角吃吧<br></blockquote><br><a id="more"></a><br>前几天去餐厅吃自助餐 ，本想甩开膀子 大干一场，把成本吃回来。</p>
 <p>结果半路杀出一盘 豆角</p>
 <p>奇妙的味道 让我根本停不下来，当然结局很惨 - 白嘴吃豆角 。饱了！最后看着满桌螃蟹、牛排吃不下。我靠 ！！！</p>
-<p>今天我就尝试让那个味道重现 来一道《鱼丸豆角》<br><a id="more"></a></p>
-<h2 id="1，食材">1，食材</h2><p>食材很简单</p>
-<h3 id="1-1_主料">1.1 主料</h3><p>1 鱼丸 、小火腿 （共150g）<br>2 豇豆 （350g 就是没有筋的那种豆角）</p>
-<h3 id="1-2_辅料">1.2 辅料</h3><p>辅料 ：八角 、花椒 、姜片、红辣椒、大蒜 、花生油 、十三香 、鸡精 、食言 、红油（辣椒油）</p>
-<h2 id="2，开始">2，开始</h2><p>豆角洗净 切成3厘米左右长度 备用</p>
+<p>今天我就尝试让那个味道重现 来一道《鱼丸豆角》</p>
+<h2 id="1，食材"><a href="#1，食材" class="headerlink" title="1，食材"></a>1，食材</h2><p>食材很简单</p>
+<h3 id="1-1-主料"><a href="#1-1-主料" class="headerlink" title="1.1 主料"></a>1.1 主料</h3><p>1 鱼丸 、小火腿 （共150g）<br>2 豇豆 （350g 就是没有筋的那种豆角）</p>
+<h3 id="1-2-辅料"><a href="#1-2-辅料" class="headerlink" title="1.2 辅料"></a>1.2 辅料</h3><p>辅料 ：八角 、花椒 、姜片、红辣椒、大蒜 、花生油 、十三香 、鸡精 、食言 、红油（辣椒油）</p>
+<h2 id="2，开始"><a href="#2，开始" class="headerlink" title="2，开始"></a>2，开始</h2><p>豆角洗净 切成3厘米左右长度 备用</p>
 <p>因为买的是冷冻的鱼丸 所以要先放水里解冻</p>
 <p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/1.jpg" alt=""></p>
-<h3 id="2-1_豆角腌制">2.1 豆角腌制</h3><p>这道菜的关键就是如何让花椒和八角的味道融入豆角当中。</p>
+<p>###2.1 豆角腌制</p>
+<p>这道菜的关键就是如何让花椒和八角的味道融入豆角当中。</p>
 <p>1，首先 制作腌制的汁料</p>
 <p>锅内加油，油热之后将切好的姜片、花椒、八角、大蒜、红辣椒 放入锅内爆炒至 飘香</p>
 <p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/2.jpg" alt=""></p>
@@ -272,7 +332,8 @@
 <p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/3.jpg" alt=""></p>
 <p>期间可以把鱼丸火腿洗净切开 备用</p>
 <p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/4.jpg" alt=""></p>
-<h3 id="2-2_下锅爆炒">2.2 下锅爆炒</h3><p>腌制好了之后，就开始下锅炒了</p>
+<p>###2.2 下锅爆炒</p>
+<p>腌制好了之后，就开始下锅炒了</p>
 <p>锅内加入少许的油 ，十三香 、大蒜 。然后将腌制好的豆角全部倒入锅内爆炒（起码10分钟）</p>
 <p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/5.jpg" alt=""></p>
 <p>爆炒至豆角 有皱皱的感觉 ，加入鱼丸、香肠，继续爆炒，并且添加适量的食盐（大概5分钟）</p>
@@ -280,10 +341,24 @@
 <p>爆炒至已经有某些鱼丸底部 变硬变黄 ； 关火，加鸡精、红油、香油 。翻炒出锅</p>
 <p><img src="http://bnetpi.qiniudn.com/cook/bean-fish/7.jpg" alt=""></p>
 <p>整个厨房都飘着香味！吃起来味道么，恩，你做了就知道 ！！！</p>
-<h2 id="*_License">* License</h2><blockquote>
-<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/cook/bean-fish">http://blog.netpi.me/cook/bean-fish</a></p>
+<h2 id="License"><a href="#License" class="headerlink" title="* License"></a>* License</h2><blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/cook/bean-fish" target="_blank" rel="external">http://blog.netpi.me/cook/bean-fish</a></p>
 </blockquote>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -328,23 +403,24 @@
     </div>
   </div>
 
- </div>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
-              <div class="ds-thread" data-thread-key="cook/bean-fish/"
-                   data-title="鱼丸豆角" data-url="http://blog.netpi.me/cook/bean-fish/">
-              </div>
-            
           </div>
-        
-      </div>
+          
 
-      
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="cook/bean-fish/"
+           data-title="鱼丸豆角" data-url="http://netpi.me/cook/bean-fish/">
+      </div>
+    
+  </div>
+
+
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -371,11 +447,13 @@
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Netpi" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">Netpi</p>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="netpi" />
+          <p class="site-author-name" itemprop="name">netpi</p>
+          <p class="site-description motion-element" itemprop="description">东泽-Netpi moon@netpi.me</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">分享代码 - 陈东泽-Netpi moon@netpi.me</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -384,43 +462,46 @@
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">6</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
               
-          </div>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
         
 
         <div class="links-of-author motion-element">
           
             
               <span class="links-of-author-item">
-                <a href="http://github.com/netpi" target="_blank">
-                  <i class="fa fa-github"></i> GitHub
+                <a href="http://github.com/netpi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank">
-                  <i class="fa fa-linkedin"></i> linkedin
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
                 </a>
               </span>
             
@@ -430,35 +511,41 @@
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">友情连接</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://joehill.me" target="_blank">Joehill</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
+              
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1，食材"><span class="nav-number">1.</span> <span class="nav-text">1，食材</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1_主料"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 主料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2_辅料"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 辅料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2，开始"><span class="nav-number">2.</span> <span class="nav-text">2，开始</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1_豆角腌制"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 豆角腌制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_下锅爆炒"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 下锅爆炒</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#*_License"><span class="nav-number">3.</span> <span class="nav-text">* License</span></a></li></ol></div>
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1，食材"><span class="nav-number">1.</span> <span class="nav-text">1，食材</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-主料"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 主料</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-辅料"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 辅料</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2，开始"><span class="nav-number">2.</span> <span class="nav-text">2，开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">3.</span> <span class="nav-text">* License</span></a></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
         </section>
       
 
@@ -466,44 +553,116 @@
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Netpi</span>
+  <span class="author" itemprop="copyrightHolder">netpi</span>
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
+        
 
- </div>
+        
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
   
   
-    
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
 
   
     
@@ -521,220 +680,29 @@
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
-      }
-    }
-  });
-</script>
-
-
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-
-      motionIntegrator.bootstrap();
-    });
-  </script>
 
   
   
 
   
+
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+  
+
+
 </body>
 </html>

@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,74 +23,107 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
 
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
-<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
 
 
-    <meta name="description" content="分享代码 - 陈东泽-Netpi moon@netpi.me" />
 
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="nginx," />
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Netpi 日志" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
-<meta name="description" content="1 启动,停止,重启1nginx -s signal
-signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp;#27490;&amp;#10;quit &amp;#8212; &amp;#20248;&amp;#38597;&amp;#30340;&amp;#20572;&amp;#27490;&amp;#10;reload &amp;#8212; &amp;#37325;&amp;#21551;&amp;#10;reopen &amp;#8212; &amp;">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Nigix 配置 使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 启动 停止 重启 | 配置主模块&事件模块">
-<meta property="og:url" content="http://blog.netpi.me/nginx/nginx-conf/index.html">
-<meta property="og:site_name" content="Netpi 日志">
-<meta property="og:description" content="1 启动,停止,重启1nginx -s signal
-signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp;#27490;&amp;#10;quit &amp;#8212; &amp;#20248;&amp;#38597;&amp;#30340;&amp;#20572;&amp;#27490;&amp;#10;reload &amp;#8212; &amp;#37325;&amp;#21551;&amp;#10;reopen &amp;#8212; &amp;">
+<meta property="og:url" content="http://netpi.me/nginx/nginx-conf/index.html">
+<meta property="og:site_name" content="东泽 - Netpi">
+<meta property="og:description" content="Nigix 配置 使用">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300">
-<meta property="og:updated_time" content="2015-01-12T09:23:02.000Z">
+<meta property="og:updated_time" content="2016-11-01T09:26:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 启动 停止 重启 | 配置主模块&事件模块">
-<meta name="twitter:description" content="1 启动,停止,重启1nginx -s signal
-signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp;#27490;&amp;#10;quit &amp;#8212; &amp;#20248;&amp;#38597;&amp;#30340;&amp;#20572;&amp;#27490;&amp;#10;reload &amp;#8212; &amp;#37325;&amp;#21551;&amp;#10;reopen &amp;#8212; &amp;">
+<meta name="twitter:description" content="Nigix 配置 使用">
+<meta name="twitter:image" content="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300">
+
 
 
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
   };
 </script>
 
 
 
-  <title> Nginx 启动 停止 重启 | 配置主模块&事件模块 | Netpi 日志 </title>
+
+  <link rel="canonical" href="http://netpi.me/nginx/nginx-conf/"/>
+
+
+  <title> Nginx 启动 停止 重启 | 配置主模块&事件模块 | 东泽 - Netpi </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -93,17 +131,26 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Netpi 日志</span>
+      <span class="site-title">东泽 - Netpi</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -122,13 +169,11 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home"></i> <br />
             
             首页
           </a>
@@ -138,8 +183,6 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive"></i> <br />
-            
             归档
           </a>
         </li>
@@ -148,14 +191,19 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags"></i> <br />
-            
             标签
           </a>
         </li>
       
-
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
       
+
       
     </ul>
   
@@ -168,7 +216,9 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
@@ -176,7 +226,11 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -195,15 +249,22 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
 
         <div class="post-meta">
           <span class="post-time">
-            发表于
-            <time itemprop="dateCreated" datetime="2015-01-03T07:50:11+08:00" content="Jan 3 2015">
-              Jan 3 2015
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-03T07:50:11+08:00" content="2015-01-03">
+              2015-01-03
             </time>
           </span>
 
           
             <span class="post-category" >
-              &nbsp; | &nbsp; 分类于
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
                   <a href="/categories/nginx/" itemprop="url" rel="index">
@@ -231,21 +292,25 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
 
           
 
+          
+          
+
+          
         </div>
       </header>
     
 
 
-    <div class="post-body">
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><h2 id="1_启动,停止,重启">1 启动,停止,重启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -s signal</span><br></pre></td></tr></table></figure>
-<p>signal 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stop &#8212; &#24555;&#36895;&#20572;&#27490;&#10;quit &#8212; &#20248;&#38597;&#30340;&#20572;&#27490;&#10;reload &#8212; &#37325;&#21551;&#10;reopen &#8212; &#37325;&#26032;&#25171;&#24320;&#26085;&#24535;&#25991;&#20214;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2 id="2_关于配置文件">2 关于配置文件</h2><h4 id="2-1_配置文件简单说明">2.1 配置文件简单说明</h4><p>配置文件可以看做是Nginx的灵魂，Nginx服务在启动时会读入配置文件，而后续几乎一切动作行为都是按照配置文件中的指令进行的，因此如果将Nginx本身看做一个计算机，那么Nginx的配置文件可以看成是全部的程序指令。</p>
+        <p><blockquote class="blockquote-center"><br>Nigix 配置 使用<br></blockquote><br><a id="more"></a></p>
+<h2 id="1-启动-停止-重启"><a href="#1-启动-停止-重启" class="headerlink" title="1 启动,停止,重启"></a>1 启动,停止,重启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s signal</div></pre></td></tr></table></figure>
+<p>signal 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">stop — 快速停止</div><div class="line">quit — 优雅的停止</div><div class="line">reload — 重启</div><div class="line">reopen — 重新打开日志文件</div></pre></td></tr></table></figure></p>
+<h2 id="2-关于配置文件"><a href="#2-关于配置文件" class="headerlink" title="2 关于配置文件"></a>2 关于配置文件</h2><h4 id="2-1-配置文件简单说明"><a href="#2-1-配置文件简单说明" class="headerlink" title="2.1 配置文件简单说明"></a>2.1 配置文件简单说明</h4><p>配置文件可以看做是Nginx的灵魂，Nginx服务在启动时会读入配置文件，而后续几乎一切动作行为都是按照配置文件中的指令进行的，因此如果将Nginx本身看做一个计算机，那么Nginx的配置文件可以看成是全部的程序指令。</p>
 <p>Nginx配置文件是纯文本文件，你可以用任何文本编辑器如vim或emacs打开它，通常它会在nginx安装目录的conf下</p>
 <p>其中“#”表示此行是注释，由于笔者为了学习扩展开发安装了一个纯净的Nginx，因此配置文件没有经过太多改动。</p>
 <p>Nginx的配置文件是以block的形式组织的，一个block通常使用大括号“{}”表示。block分为几个层级，整个配置文件为main层级，这是最大的层级；在main层级下可以有event、http等层级，而http中又会有server block，server block中可以包含location block。</p>
@@ -254,108 +319,122 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
 <p>一般来说，一个server block表示一个Host，而里面的一个location则代表一个路由映射规则，这两个block可以说是HTTP配置的核心。配置文件</p>
 <p>下图是Nginx配置文件通常结构图示。</p>
 <p><img src="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300" alt=""></p>
-<h3 id="2-2_主模块">2.2 主模块</h3><blockquote>
+<h3 id="2-2-主模块"><a href="#2-2-主模块" class="headerlink" title="2.2 主模块"></a>2.2 主模块</h3><blockquote>
 <p>控制 Nginx 的基本功能的指令.</p>
 </blockquote>
-<h4 id="2-2-1_daemon">2.2.1 daemon</h4><p>语法: daemon on | off</p>
+<h4 id="2-2-1-daemon"><a href="#2-2-1-daemon" class="headerlink" title="2.2.1 daemon"></a>2.2.1 daemon</h4><p>语法: daemon on | off</p>
 <p>默认值: on</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">daemon  off;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">daemon  off;</div></pre></td></tr></table></figure>
 <p>生产环境中不要使用”daemon”和”master_process”指令，这些选项仅用于开发调试。</p>
-<h4 id="2-2-2_debug_points">2.2.2  debug_points</h4><p>语法: debug_points [stop | abort]</p>
+<h4 id="2-2-2-debug-points"><a href="#2-2-2-debug-points" class="headerlink" title="2.2.2  debug_points"></a>2.2.2  debug_points</h4><p>语法: debug_points [stop | abort]</p>
 <p>默认值: none</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debug_points stop;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-3_error_log">2.2.3 error_log</h4><p>语法: error_log file [ debug | info | notice | warn | error | crit ]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">debug_points stop;</div></pre></td></tr></table></figure>
+<h4 id="2-2-3-error-log"><a href="#2-2-3-error-log" class="headerlink" title="2.2.3 error_log"></a>2.2.3 error_log</h4><p>语法: error_log file [ debug | info | notice | warn | error | crit ]</p>
 <p>默认值: ${prefix}/logs/error.log</p>
-<p>Nginx 添加 —with-debug 编译参数, 你还能够使用以下配置:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error_log LOGFILE [ debug_core | debug_alloc | debug_mutex | debug_event&#10;]: | debug_http | debug_imap ;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-4_include">2.2.4 include</h4><p>语法: include file | *</p>
+<p>Nginx 添加 –with-debug 编译参数, 你还能够使用以下配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error_log LOGFILE [ debug_core | debug_alloc | debug_mutex | debug_event</div><div class="line">]: | debug_http | debug_imap ;</div></pre></td></tr></table></figure>
+<h4 id="2-2-4-include"><a href="#2-2-4-include" class="headerlink" title="2.2.4 include"></a>2.2.4 include</h4><p>语法: include file | *</p>
 <p>默认值: none</p>
 <p>你可以在任意地方使用include指令实现配置文件的包含，类似于apache中的include方法，可减少主配置文件d。</p>
-<p>include 指令还支持像下面配置一样的全局包含的方法，例如包含一个目录下所有以”.conf”结尾的文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include vhosts/*.conf;</span><br></pre></td></tr></table></figure></p>
-<p>注意路径受到configure编译参数—prefix=&lt;路径&gt;指令的影响，如果没有指定，Nginx默认是被编译在/usr/local/nginx。</p>
+<p>include 指令还支持像下面配置一样的全局包含的方法，例如包含一个目录下所有以”.conf”结尾的文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include vhosts/*.conf;</div></pre></td></tr></table></figure></p>
+<p>注意路径受到configure编译参数–prefix=&lt;路径&gt;指令的影响，如果没有指定，Nginx默认是被编译在/usr/local/nginx。</p>
 <p>语法: lock_file file</p>
-<p>默认值: compile-time option<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lock_file  /var/log/lock_file;</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-2-5_master_process">2.2.5 master_process</h4><p>语法: master_process on | off</p>
-<p>默认值: on<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">master_process  off;</span><br></pre></td></tr></table></figure></p>
+<p>默认值: compile-time option<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lock_file  /var/log/lock_file;</div></pre></td></tr></table></figure></p>
+<h4 id="2-2-5-master-process"><a href="#2-2-5-master-process" class="headerlink" title="2.2.5 master_process"></a>2.2.5 master_process</h4><p>语法: master_process on | off</p>
+<p>默认值: on<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">master_process  off;</div></pre></td></tr></table></figure></p>
 <p>生产环境中不要使用”daemon”和”master_process”指令，这些选项仅用于开发调试。</p>
-<h4 id="2-2-6_pid">2.2.6 pid</h4><p>语法: pid file</p>
+<h4 id="2-2-6-pid"><a href="#2-2-6-pid" class="headerlink" title="2.2.6 pid"></a>2.2.6 pid</h4><p>语法: pid file</p>
 <p>默认值: compile-time option Example:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pid /var/log/nginx.pid;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pid /var/log/nginx.pid;</div></pre></td></tr></table></figure>
 <p>进程id存储文件。可以使用 kill -HUP cat /var/log/nginx.pid\ 对Nginx进行配置文件重新加载。</p>
-<h4 id="2-2-7_ssl_engine">2.2.7 ssl_engine</h4><p>语法: ssl_engine engine</p>
+<h4 id="2-2-7-ssl-engine"><a href="#2-2-7-ssl-engine" class="headerlink" title="2.2.7 ssl_engine"></a>2.2.7 ssl_engine</h4><p>语法: ssl_engine engine</p>
 <p>默认值: system dependent</p>
 <p>该指令用于指定openssl使用的引擎。你可以通过下面的命令行获知系统目前支持的openssl引擎</p>
 <p>openssl engine -t</p>
-<p>例如 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl engine -t&#10;(cryptodev) BSD cryptodev engine&#10;: [ available ]&#10;(dynamic) Dynamic engine loading support&#10;: [ unavailable ]</span><br></pre></td></tr></table></figure></p>
-<h4 id="2-2-8_timer_resolution">2.2.8 timer_resolution</h4><p>语法: timer_resolution t</p>
+<p>例如 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ openssl engine -t</div><div class="line">(cryptodev) BSD cryptodev engine</div><div class="line">: [ available ]</div><div class="line">(dynamic) Dynamic engine loading support</div><div class="line">: [ unavailable ]</div></pre></td></tr></table></figure></p>
+<h4 id="2-2-8-timer-resolution"><a href="#2-2-8-timer-resolution" class="headerlink" title="2.2.8 timer_resolution"></a>2.2.8 timer_resolution</h4><p>语法: timer_resolution t</p>
 <p>默认值: none</p>
-<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timer_resolution  100ms;</span><br></pre></td></tr></table></figure></p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">timer_resolution  100ms;</div></pre></td></tr></table></figure></p>
 <p>官方文档的说明:</p>
 <p>The directive allows to decrease number gettimeofday() syscalls. By default gettimeofday() is called after each return from kevent(), epoll, /dev/poll, select(), poll().</p>
 <p>But if you need an exact time in logs when logging $upstream_response_time, or $msec variables, then you should use timer_resolution.</p>
-<h4 id="2-2-9_user">2.2.9 user</h4><p>语法: user user [group]</p>
+<h4 id="2-2-9-user"><a href="#2-2-9-user" class="headerlink" title="2.2.9 user"></a>2.2.9 user</h4><p>语法: user user [group]</p>
 <p>默认值: nobody nobody</p>
 <p>指定Nginx Worker进程运行用户，默认是nobody帐号。</p>
 <p>例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user www users;</span><br></pre></td></tr></table></figure>
-<h4 id="2-2-10_worker_cpu_affinity">2.2.10 worker_cpu_affinity</h4><p>语法: worker_cpu_affinity cpumask [cpumask…]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">user www users;</div></pre></td></tr></table></figure>
+<h4 id="2-2-10-worker-cpu-affinity"><a href="#2-2-10-worker-cpu-affinity" class="headerlink" title="2.2.10 worker_cpu_affinity"></a>2.2.10 worker_cpu_affinity</h4><p>语法: worker_cpu_affinity cpumask [cpumask…]</p>
 <p>默认值: none</p>
 <p>Linux only.</p>
 <p>With this option you can bind the worker process to a CPU, it calls sched_setaffinity().</p>
 <p>仅适用于linux，使用该选项可以绑定worker进程和CPU.</p>
-<p>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker_proceses     4;&#10;worker_cpu_affinity 0001 0010 0100 1000;</span><br></pre></td></tr></table></figure></p>
+<p>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">worker_proceses     4;</div><div class="line">worker_cpu_affinity 0001 0010 0100 1000;</div></pre></td></tr></table></figure></p>
 <p>Bind each worker process to one CPU only.</p>
 <p>分别给每个worker进程绑定一个CPU.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker_proceses     2;&#10;worker_cpu_affinity 0101 1010;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">worker_proceses     2;</div><div class="line">worker_cpu_affinity 0101 1010;</div></pre></td></tr></table></figure>
 <p>Bind the first worker to CPU0/CPU2, bind the second worker to CPU1/CPU3. This is suitable for HTT.</p>
 <p>将CPU0/CPU2绑定给第一个worker进程，将CPU1/CPU3绑定给第二个worker进程。</p>
-<h4 id="2-2-11_worker_priority">2.2.11 worker_priority</h4><p>语法: worker_priority [-] number</p>
+<h4 id="2-2-11-worker-priority"><a href="#2-2-11-worker-priority" class="headerlink" title="2.2.11 worker_priority"></a>2.2.11 worker_priority</h4><p>语法: worker_priority [-] number</p>
 <p>默认值: on</p>
 <p>With this option you can give to all worker processes the priority (nice) you need/wish, it calls setpriority().</p>
 <p>使用该选项可以给所有的worker进程分配优先值。</p>
-<h4 id="2-2-12_worker_processes">2.2.12 worker_processes</h4><p>语法: worker_processes number</p>
+<h4 id="2-2-12-worker-processes"><a href="#2-2-12-worker-processes" class="headerlink" title="2.2.12 worker_processes"></a>2.2.12 worker_processes</h4><p>语法: worker_processes number</p>
 <p>默认值: 1</p>
 <p>e.g.:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker_processes 5;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">worker_processes 5;</div></pre></td></tr></table></figure>
 <p>nginx has the ability to use more than one worker process for several reasons:</p>
 <p>nginx可以使用多个worker进程，原因如下：</p>
-<pre><code><span class="number">1</span><span class="class">.to</span> use SMP
-<span class="number">2</span><span class="class">.to</span> decrease latency when workers blockend on disk I/O
-<span class="number">3</span><span class="class">.to</span> limit number of connections per process when <span class="function"><span class="title">select</span><span class="params">()</span></span>/<span class="function"><span class="title">poll</span><span class="params">()</span></span> is used
+<pre><code>1.to use SMP
+2.to decrease latency when workers blockend on disk I/O
+3.to limit number of connections per process when select()/poll() is used
 </code></pre><p>The worker_processes and worker_connections from the event sections allows you to calculate maxclients value: k</p>
 <p>max_clients = worker_processes * worker_connections</p>
-<h4 id="2-2-13_worker_rlimit_core">2.2.13 worker_rlimit_core</h4><p>语法: worker_rlimit_core size</p>
+<h4 id="2-2-13-worker-rlimit-core"><a href="#2-2-13-worker-rlimit-core" class="headerlink" title="2.2.13 worker_rlimit_core"></a>2.2.13 worker_rlimit_core</h4><p>语法: worker_rlimit_core size</p>
 <p>默认值: ‘</p>
 <p>Maximum size of core file per worker;</p>
-<h4 id="2-2-14_worker_rlimit_nofile">2.2.14 worker_rlimit_nofile</h4><p>语法: worker_rlimit_nofile limit 默认值: ‘</p>
+<h4 id="2-2-14-worker-rlimit-nofile"><a href="#2-2-14-worker-rlimit-nofile" class="headerlink" title="2.2.14 worker_rlimit_nofile"></a>2.2.14 worker_rlimit_nofile</h4><p>语法: worker_rlimit_nofile limit 默认值: ‘</p>
 <p>Specifies the value for maximum file descriptors that can be opened by this process.</p>
 <p>指定</p>
-<h4 id="2-2-15_worker_rlimit_sigpending">2.2.15 worker_rlimit_sigpending</h4><p>语法: worker_rlimit_sigpending limit 默认值: ‘</p>
+<h4 id="2-2-15-worker-rlimit-sigpending"><a href="#2-2-15-worker-rlimit-sigpending" class="headerlink" title="2.2.15 worker_rlimit_sigpending"></a>2.2.15 worker_rlimit_sigpending</h4><p>语法: worker_rlimit_sigpending limit 默认值: ‘</p>
 <p>(Since Linux 2.6.8) Specifies the limit on the number of signals that may be queued for the real user ID of the calling process.</p>
-<h4 id="2-2-16_working_directory">2.2.16 working_directory</h4><p>语法: working_directory path 默认值: —prefix</p>
-<p>This is the working directory for the workers. It’s used for core files only. nginx uses absolute paths only, all relative paths in configuration files are relative to —prefix==PATH.</p>
-<h3 id="2-3_事件模块">2.3 事件模块</h3><blockquote>
-<p>设置Nginx处理连接请求<br>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">events &#123;&#10;    worker_connections  1024;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="2-2-16-working-directory"><a href="#2-2-16-working-directory" class="headerlink" title="2.2.16 working_directory"></a>2.2.16 working_directory</h4><p>语法: working_directory path 默认值: –prefix</p>
+<p>This is the working directory for the workers. It’s used for core files only. nginx uses absolute paths only, all relative paths in configuration files are relative to –prefix==PATH.</p>
+<h3 id="2-3-事件模块"><a href="#2-3-事件模块" class="headerlink" title="2.3 事件模块"></a>2.3 事件模块</h3><blockquote>
+<p>设置Nginx处理连接请求<br>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">events &#123;</div><div class="line">    worker_connections  1024;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="2-3-1_accept_mutex">2.3.1 accept_mutex</h4><p>Syntax: accept_mutex [ on | off ]</p>
+<h4 id="2-3-1-accept-mutex"><a href="#2-3-1-accept-mutex" class="headerlink" title="2.3.1 accept_mutex"></a>2.3.1 accept_mutex</h4><p>Syntax: accept_mutex [ on | off ]</p>
 <p>Default: on</p>
 <p>nginx 使用连接互斥锁进行顺序的accept()系统调用.</p>
-<h4 id="2-3-2_accept_mutex_delay">2.3.2 accept_mutex_delay</h4><p>Syntax: accept_mutex_delay Nms;</p>
+<h4 id="2-3-2-accept-mutex-delay"><a href="#2-3-2-accept-mutex-delay" class="headerlink" title="2.3.2 accept_mutex_delay"></a>2.3.2 accept_mutex_delay</h4><p>Syntax: accept_mutex_delay Nms;</p>
 <p>Default: 500ms</p>
 <p>如果一个进程没有互斥锁，它将延迟至少多长时间。默认情况下，延迟是500ms 。</p>
-<h4 id="2-3-3_use">2.3.3 use</h4><p>Syntax: use [ kqueue | rtsig | epoll | /dev/poll | select | poll | eventport ]</p>
+<h4 id="2-3-3-use"><a href="#2-3-3-use" class="headerlink" title="2.3.3 use"></a>2.3.3 use</h4><p>Syntax: use [ kqueue | rtsig | epoll | /dev/poll | select | poll | eventport ]</p>
 <p>Default:</p>
 <p>如果在./configure的时候指定了不止一种事件模型，那么可以设置其中一个，以便告诉nginx使用哪种事件模型。默认情况下nginx会在./configure时找出最适合系统的事件模型。</p>
 <p>你可以在 这里 查看可用的事件模型以及如何在./configure时激活</p>
-<h4 id="2-3-4_worker_connections">2.3.4 worker_connections</h4><p>Syntax: worker_connections number</p>
+<h4 id="2-3-4-worker-connections"><a href="#2-3-4-worker-connections" class="headerlink" title="2.3.4 worker_connections"></a>2.3.4 worker_connections</h4><p>Syntax: worker_connections number</p>
 <p>Default:</p>
-<p>通过worker_connections和worker_proceses可以计算出maxclients：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_clients = worker_processes * worker_connections</span><br></pre></td></tr></table></figure></p>
-<p>作为反向代理，max_clients为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_clients = worker_processes * worker_connections/4</span><br></pre></td></tr></table></figure></p>
+<p>通过worker_connections和worker_proceses可以计算出maxclients：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_clients = worker_processes * worker_connections</div></pre></td></tr></table></figure></p>
+<p>作为反向代理，max_clients为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_clients = worker_processes * worker_connections/4</div></pre></td></tr></table></figure></p>
 <p>Since a browser opens 2 connections by default to a server and nginx uses the fds (file descriptors) from the same pool to connect to the upstream backend</p>
 <blockquote>
-<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/nginx/nginx-conf/">http://blog.netpi.me/nginx/nginx-conf/</a></p>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/nginx/nginx-conf/" target="_blank" rel="external">http://blog.netpi.me/nginx/nginx-conf/</a></p>
 </blockquote>
-</span>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
       
     </div>
 
@@ -400,23 +479,24 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
     </div>
   </div>
 
- </div>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
-              <div class="ds-thread" data-thread-key="nginx/nginx-conf/"
-                   data-title="Nginx 启动 停止 重启 | 配置主模块&事件模块" data-url="http://blog.netpi.me/nginx/nginx-conf/">
-              </div>
-            
           </div>
-        
-      </div>
+          
 
-      
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="nginx/nginx-conf/"
+           data-title="Nginx 启动 停止 重启 | 配置主模块&事件模块" data-url="http://netpi.me/nginx/nginx-conf/">
+      </div>
+    
+  </div>
+
+
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -443,11 +523,13 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Netpi" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">Netpi</p>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="netpi" />
+          <p class="site-author-name" itemprop="name">netpi</p>
+          <p class="site-description motion-element" itemprop="description">东泽-Netpi moon@netpi.me</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">分享代码 - 陈东泽-Netpi moon@netpi.me</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -456,43 +538,46 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">6</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
               
-          </div>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
         
 
         <div class="links-of-author motion-element">
           
             
               <span class="links-of-author-item">
-                <a href="http://github.com/netpi" target="_blank">
-                  <i class="fa fa-github"></i> GitHub
+                <a href="http://github.com/netpi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank">
-                  <i class="fa fa-linkedin"></i> linkedin
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
                 </a>
               </span>
             
@@ -502,35 +587,41 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">友情连接</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://joehill.me" target="_blank">Joehill</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
       
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
+              
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1_启动,停止,重启"><span class="nav-number">1.</span> <span class="nav-text">1 启动,停止,重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2_关于配置文件"><span class="nav-number">2.</span> <span class="nav-text">2 关于配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1_配置文件简单说明"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 配置文件简单说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2_主模块"><span class="nav-number">2.1.</span> <span class="nav-text">2.2 主模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1_daemon"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.2.1 daemon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2_debug_points"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.2.2  debug_points</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3_error_log"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.2.3 error_log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4_include"><span class="nav-number">2.1.4.</span> <span class="nav-text">2.2.4 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5_master_process"><span class="nav-number">2.1.5.</span> <span class="nav-text">2.2.5 master_process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-6_pid"><span class="nav-number">2.1.6.</span> <span class="nav-text">2.2.6 pid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-7_ssl_engine"><span class="nav-number">2.1.7.</span> <span class="nav-text">2.2.7 ssl_engine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-8_timer_resolution"><span class="nav-number">2.1.8.</span> <span class="nav-text">2.2.8 timer_resolution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-9_user"><span class="nav-number">2.1.9.</span> <span class="nav-text">2.2.9 user</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-10_worker_cpu_affinity"><span class="nav-number">2.1.10.</span> <span class="nav-text">2.2.10 worker_cpu_affinity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-11_worker_priority"><span class="nav-number">2.1.11.</span> <span class="nav-text">2.2.11 worker_priority</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-12_worker_processes"><span class="nav-number">2.1.12.</span> <span class="nav-text">2.2.12 worker_processes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-13_worker_rlimit_core"><span class="nav-number">2.1.13.</span> <span class="nav-text">2.2.13 worker_rlimit_core</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-14_worker_rlimit_nofile"><span class="nav-number">2.1.14.</span> <span class="nav-text">2.2.14 worker_rlimit_nofile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-15_worker_rlimit_sigpending"><span class="nav-number">2.1.15.</span> <span class="nav-text">2.2.15 worker_rlimit_sigpending</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-16_working_directory"><span class="nav-number">2.1.16.</span> <span class="nav-text">2.2.16 working_directory</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3_事件模块"><span class="nav-number">2.2.</span> <span class="nav-text">2.3 事件模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1_accept_mutex"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.3.1 accept_mutex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2_accept_mutex_delay"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.3.2 accept_mutex_delay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3_use"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3.3 use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4_worker_connections"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.3.4 worker_connections</span></a></li></ol></li></ol></li></ol></div>
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-启动-停止-重启"><span class="nav-number">1.</span> <span class="nav-text">1 启动,停止,重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-关于配置文件"><span class="nav-number">2.</span> <span class="nav-text">2 关于配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-配置文件简单说明"><span class="nav-number">2.0.1.</span> <span class="nav-text">2.1 配置文件简单说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-主模块"><span class="nav-number">2.1.</span> <span class="nav-text">2.2 主模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-daemon"><span class="nav-number">2.1.1.</span> <span class="nav-text">2.2.1 daemon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-debug-points"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.2.2  debug_points</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-error-log"><span class="nav-number">2.1.3.</span> <span class="nav-text">2.2.3 error_log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-include"><span class="nav-number">2.1.4.</span> <span class="nav-text">2.2.4 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5-master-process"><span class="nav-number">2.1.5.</span> <span class="nav-text">2.2.5 master_process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-6-pid"><span class="nav-number">2.1.6.</span> <span class="nav-text">2.2.6 pid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-7-ssl-engine"><span class="nav-number">2.1.7.</span> <span class="nav-text">2.2.7 ssl_engine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-8-timer-resolution"><span class="nav-number">2.1.8.</span> <span class="nav-text">2.2.8 timer_resolution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-9-user"><span class="nav-number">2.1.9.</span> <span class="nav-text">2.2.9 user</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-10-worker-cpu-affinity"><span class="nav-number">2.1.10.</span> <span class="nav-text">2.2.10 worker_cpu_affinity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-11-worker-priority"><span class="nav-number">2.1.11.</span> <span class="nav-text">2.2.11 worker_priority</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-12-worker-processes"><span class="nav-number">2.1.12.</span> <span class="nav-text">2.2.12 worker_processes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-13-worker-rlimit-core"><span class="nav-number">2.1.13.</span> <span class="nav-text">2.2.13 worker_rlimit_core</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-14-worker-rlimit-nofile"><span class="nav-number">2.1.14.</span> <span class="nav-text">2.2.14 worker_rlimit_nofile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-15-worker-rlimit-sigpending"><span class="nav-number">2.1.15.</span> <span class="nav-text">2.2.15 worker_rlimit_sigpending</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-16-working-directory"><span class="nav-number">2.1.16.</span> <span class="nav-text">2.2.16 working_directory</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-事件模块"><span class="nav-number">2.2.</span> <span class="nav-text">2.3 事件模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-accept-mutex"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.3.1 accept_mutex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-accept-mutex-delay"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.3.2 accept_mutex_delay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3-use"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3.3 use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-worker-connections"><span class="nav-number">2.2.4.</span> <span class="nav-text">2.3.4 worker_connections</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
         </section>
       
 
@@ -538,44 +629,116 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Netpi</span>
+  <span class="author" itemprop="copyrightHolder">netpi</span>
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
+        
 
- </div>
+        
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
   
   
-    
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
 
   
     
@@ -593,220 +756,29 @@ signal 的内容如下1stop &amp;#8212; &amp;#24555;&amp;#36895;&amp;#20572;&amp
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
-
-
-<script type="text/javascript" id="sidebar.toc.highlight">
-  $(document).ready(function () {
-    var tocSelector = '.post-toc';
-    var $tocSelector = $(tocSelector);
-    var activeCurrentSelector = '.active-current';
-
-    $tocSelector
-      .on('activate.bs.scrollspy', function () {
-        var $currentActiveElement = $(tocSelector + ' .active').last();
-
-        removeCurrentActiveClass();
-        $currentActiveElement.addClass('active-current');
-
-        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
-      })
-      .on('clear.bs.scrollspy', function () {
-        removeCurrentActiveClass();
-      });
-
-    function removeCurrentActiveClass () {
-      $(tocSelector + ' ' + activeCurrentSelector)
-        .removeClass(activeCurrentSelector.substring(1));
-    }
-
-    function processTOC () {
-      getTOCMaxHeight();
-      toggleTOCOverflowIndicators();
-    }
-
-    function getTOCMaxHeight () {
-      var height = $('.sidebar').height() -
-                   $tocSelector.position().top -
-                   $('.post-toc-indicator-bottom').height();
-
-      $tocSelector.css('height', height);
-
-      return height;
-    }
-
-    function toggleTOCOverflowIndicators () {
-      tocOverflowIndicator(
-        '.post-toc-indicator-top',
-        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
-      );
-
-      tocOverflowIndicator(
-        '.post-toc-indicator-bottom',
-        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
-      )
-    }
-
-    $(document).on('sidebar.motion.complete', function () {
-      processTOC();
-    });
-
-    $('body').scrollspy({ target: tocSelector });
-    $(window).on('resize', function () {
-      if ( $('.sidebar').hasClass('sidebar-active') ) {
-        processTOC();
-      }
-    });
-
-    onScroll($tocSelector);
-
-    function onScroll (element) {
-      element.on('mousewheel DOMMouseScroll', function (event) {
-          var oe = event.originalEvent;
-          var delta = oe.wheelDelta || -oe.detail;
-
-          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
-          event.preventDefault();
-
-          toggleTOCOverflowIndicators();
-      });
-    }
-
-    function tocOverflowIndicator (indicator, action) {
-      var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
-      $indicator.velocity ?
-        $indicator.velocity('stop').velocity({
-          opacity: opacity
-        }, { duration: 100 }) :
-        $indicator.stop().animate({
-          opacity: opacity
-        }, 100);
-    }
-
-  });
-</script>
-
-<script type="text/javascript" id="sidebar.nav">
-  $(document).ready(function () {
-    var html = $('html');
-    var TAB_ANIMATE_DURATION = 200;
-    var hasVelocity = $.isFunction(html.velocity);
-
-    $('.sidebar-nav li').on('click', function () {
-      var item = $(this);
-      var activeTabClassName = 'sidebar-nav-active';
-      var activePanelClassName = 'sidebar-panel-active';
-      if (item.hasClass(activeTabClassName)) {
-        return;
-      }
-
-      var currentTarget = $('.' + activePanelClassName);
-      var target = $('.' + item.data('target'));
-
-      hasVelocity ?
-        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
-          target
-            .velocity('stop')
-            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
-            .addClass(activePanelClassName);
-        }) :
-        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
-          currentTarget.hide();
-          target
-            .stop()
-            .css({'opacity': 0, 'display': 'block'})
-            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
-              currentTarget.removeClass(activePanelClassName);
-              target.addClass(activePanelClassName);
-            });
-        });
-
-      item.siblings().removeClass(activeTabClassName);
-      item.addClass(activeTabClassName);
-    });
-
-    $('.post-toc a').on('click', function (e) {
-      e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
-      var offset = $(targetSelector).offset().top;
-      hasVelocity ?
-        html.velocity('stop').velocity('scroll', {
-          offset: offset  + 'px',
-          mobileHA: false
-        }) :
-        $('html, body').stop().animate({
-          scrollTop: offset
-        }, 500);
-    });
-
-    // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
-      }
-    }
-  });
-</script>
-
-
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-
-      motionIntegrator.bootstrap();
-    });
-  </script>
 
   
   
 
   
+
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+  
+
+
 </body>
 </html>

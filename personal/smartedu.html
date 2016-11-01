@@ -1,11 +1,16 @@
 <!doctype html>
-<html class="theme-next use-motion theme-next-mist">
-<head>
+
+
+
   
 
-<meta charset="UTF-8"/>
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
 
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -18,33 +23,65 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
 
 
 
   
-    <link href='//fonts.lug.ustc.edu.cn/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   
 
 
-<link rel="stylesheet" type="text/css" href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" />
-
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.2"/>
-
-
-    <meta name="description" content="分享代码 - 陈东泽-Netpi moon@netpi.me" />
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="陈东泽,东泽,netpi,ueditor,nodejs" />
 
 
 
-  <link rel="alternate" href="/atom.xml" title="Netpi 日志" type="application/atom+xml" />
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
 
 
 <meta name="description" content="javascript为了应聘贵公司职位 , 更好的展现自己 . 我把 http://www.smartstudy.com/网站中涉及到的js前端代码认真的阅读了一遍 . 给每个js加上了我理解的注释.(有些相似的脚本以及插件未加).
@@ -58,8 +95,8 @@
 点击图片编号,切换到指定图片,并且期间定时器不停">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Smartstudy 网站js分析">
-<meta property="og:url" content="http://blog.netpi.me/personal/smartedu.html">
-<meta property="og:site_name" content="Netpi 日志">
+<meta property="og:url" content="http://netpi.me/personal/smartedu.html">
+<meta property="og:site_name" content="东泽 - Netpi">
 <meta property="og:description" content="javascript为了应聘贵公司职位 , 更好的展现自己 . 我把 http://www.smartstudy.com/网站中涉及到的js前端代码认真的阅读了一遍 . 给每个js加上了我理解的注释.(有些相似的脚本以及插件未加).
 1 index.js 大图轮播大图轮播
 
@@ -69,7 +106,7 @@
 
 每6秒图片滚动一次
 点击图片编号,切换到指定图片,并且期间定时器不停">
-<meta property="og:updated_time" content="2015-01-16T03:49:11.000Z">
+<meta property="og:updated_time" content="2016-11-01T08:16:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Smartstudy 网站js分析">
 <meta name="twitter:description" content="javascript为了应聘贵公司职位 , 更好的展现自己 . 我把 http://www.smartstudy.com/网站中涉及到的js前端代码认真的阅读了一遍 . 给每个js加上了我理解的注释.(有些相似的脚本以及插件未加).
@@ -83,35 +120,38 @@
 点击图片编号,切换到指定图片,并且期间定时器不停">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: 'Mist',
-    sidebar: 'post'
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
   };
 </script>
 
+
+
+
+  <link rel="canonical" href="http://netpi.me/personal/smartedu.html"/>
 
 
   <title>
   
 
   
-    Smartstudy 网站js分析 | Netpi 日志
+    Smartstudy 网站js分析 | 东泽 - Netpi
   
 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
 
 
@@ -119,17 +159,26 @@
 
 
 
-  <div class="container one-column ">
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Netpi 日志</span>
+      <span class="site-title">东泽 - Netpi</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -148,13 +197,11 @@
   
 
   
-    <ul id="menu" class="menu ">
+    <ul id="menu" class="menu">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-home"></i> <br />
             
             首页
           </a>
@@ -164,8 +211,6 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive"></i> <br />
-            
             归档
           </a>
         </li>
@@ -174,14 +219,19 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags"></i> <br />
-            
             标签
           </a>
         </li>
       
-
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
       
+
       
     </ul>
   
@@ -194,13 +244,15 @@
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
     
-      <h2 id="javascript">javascript</h2><p>为了应聘贵公司职位 , 更好的展现自己 . 我把 <a href="http://www.smartstudy.com/" target="_blank" rel="external">http://www.smartstudy.com/</a>网站中涉及到的js前端代码认真的阅读了一遍 . 给每个js加上了我理解的注释.(有些相似的脚本以及插件未加).</p>
-<h3 id="1_index-js_大图轮播">1 index.js 大图轮播</h3><p>大图轮播</p>
+      <h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript"></a>javascript</h2><p>为了应聘贵公司职位 , 更好的展现自己 . 我把 <a href="http://www.smartstudy.com/" target="_blank" rel="external">http://www.smartstudy.com/</a>网站中涉及到的js前端代码认真的阅读了一遍 . 给每个js加上了我理解的注释.(有些相似的脚本以及插件未加).</p>
+<h3 id="1-index-js-大图轮播"><a href="#1-index-js-大图轮播" class="headerlink" title="1 index.js 大图轮播"></a>1 index.js 大图轮播</h3><p>大图轮播</p>
 <blockquote>
 <p>给每个js加上了我理解的注释</p>
 </blockquote>
@@ -212,27 +264,27 @@
 <li>被点击的图片的编号 大于/小于 当前图片的编号时 图片从向 左/右 滑动 ,</li>
 <li>当浏览器窗口大小变化时,每次滑动都要判断 以便让图片居中</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(function() &#123;&#10;  $(&#34;#focusIndex1&#34;).show();&#10;  &#40664;&#35748;&#23637;&#31034;&#31532;&#19968;&#24352;&#22270;&#29255;&#10;  $(&#34;#focusBar li&#34;).css(&#34;width&#34;, $(window).width());&#10;  $(&#34;#focusBar li&#34;).mouseover(function() &#123;&#10;    stopFocusAm(); // &#24403;&#40736;&#26631;&#25918;&#21040;&#22823;&#22270;&#19978; &#20572;&#27490;&#23450;&#26102;&#22120;&#10;  &#125;).mouseout(function() &#123;&#10;    starFocustAm(); // &#40736;&#26631;&#31227;&#24320; &#21551;&#29992;&#23450;&#26102;&#22120;&#10;  &#125;);&#10;  starFocustAm(); // &#40664;&#35748;&#21551;&#29992;&#23450;&#26102;&#22120;&#10;&#125;);&#10;var timerFID;&#10;&#10;function nextPage() &#123;&#10;  changeFocus(true);&#10;&#125;&#10;&#10;function prePage() &#123;&#10;  changeFocus(false);&#10;&#125;&#10;var currentFocusI = 1;&#10;var changeingFocus = false;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function changeFocus(dir, nextI) &#123; // &#21021;&#22987;&#20540;&#20026; dir = true ; nextI = 0&#10;&#10;  if (currentFocusI == nextI) &#123; // &#24403;&#21069;&#22270;&#29255;&#32534;&#21495; === &#34987;&#28857;&#20987;&#22270;&#29255;&#32534;&#21495;&#10;    return; // &#19981;&#20570;&#20219;&#20309;&#25805;&#20316;&#10;  &#125;&#10;  if (currentFocusI &#62; nextI) &#123; // &#24403;&#21069;&#22270;&#29255;&#32534;&#21495; &#62; &#34987;&#28857;&#20987;&#22270;&#29255;&#32534;&#21495;&#10;    dir = false; // &#25913;&#21464;&#22270;&#29255;&#28378;&#21160;&#40664;&#35748;&#26041;&#21521;&#10;  &#125; else &#123;&#10;    dir = true; // &#21542;&#21017;&#19981;&#25913;&#21464;&#26041;&#21521;&#10;  &#125;&#10;  if (nextI == 0) &#123; // &#24403;&#28857;&#20987;&#22238;&#21040;&#36215;&#28857;&#10;    dir = true; // &#22238;&#22797;&#40664;&#35748;&#26041;&#21521;&#10;    var nextI = dir ? currentFocusI + 1 : currentFocusI - 1; // ?&#10;    nextI = nextI &#62; $(&#34;#focusBar li&#34;).length ? 1 : (nextI &#60; 1 ? $(&#34;#focusBar li&#34;).length : nextI);&#10;  &#125;&#10;  $(&#39;.ban_item_box a&#39;).each(function() &#123;&#10;    $(this).removeClass(&#34;a_active&#34;); //&#20808;&#35753;&#25152;&#26377;&#32534;&#21495;&#21464;&#28784;&#10;  &#125;);&#10;  $(&#39;#nav_&#39; + nextI).addClass(&#34;a_active&#34;); // &#28982;&#21518;&#25226;&#35201;&#23637;&#31034;&#30340;&#32534;&#21495;&#28857;&#20142;&#10;  if ($(&#34;#focusBar li&#34;).length &#60;= 1) return; // &#22914;&#26524;&#21482;&#26377;&#19968;&#24352;&#22270; &#25110;&#32773;&#27809;&#26377;&#22270;&#29255; &#37027;&#20040; &#36820;&#22238;&#10;  if (changeingFocus) return; // &#22914;&#26524;&#31361;&#28982;&#23458;&#25143;&#31471;&#28857;&#20987;&#20102;&#21035;&#30340;&#32534;&#21495; &#37027;&#20040; &#36820;&#22238;&#10;  changeingFocus = true;&#10;  $(&#34;#focusIndex&#34; + nextI).stop(false, true); // &#20572;&#27490; &#24403;&#21069;&#21160;&#30011;&#10;  $(&#34;#focusIndex&#34; + nextI + &#34; .focusL&#34;).stop(false, true); // &#20572;&#27490; &#24403;&#21069;&#21160;&#30011;&#10;  $(&#34;#focusIndex&#34; + nextI + &#34; .focusR&#34;).stop(false, true); // &#20572;&#27490; &#24403;&#21069;&#21160;&#30011;&#10;  /*var nextI = dir?currentFocusI+1:currentFocusI-1;&#10;  nextI = nextI&#62;$(&#34;#focusBar li&#34;).length?1:(nextI&#60;1?$(&#34;#focusBar li&#34;).length:nextI);*/&#10;  var focusWidth = $(window).width()&#62;1000?1000:$(window).width();&#10;&#10;  // &#35774;&#32622;&#24403;&#21069;&#22270;&#29255;&#25152;&#22312;li&#23485;&#24230;&#20026;&#27983;&#35272;&#22120;&#31383;&#21475;&#23485;&#24230; &#20197;&#20415;&#26159;&#22270;&#29255;&#21487;&#20197;&#23621;&#20013;&#10;  $(&#34;#focusIndex&#34; + currentFocusI).css(&#34;width&#34;, $(window).width());&#10;  $(&#34;#focusIndex&#34; + nextI).css(&#34;width&#34;, $(window).width()); //&#10;  if (dir) &#123; // &#22914;&#26524;&#26159;&#40664;&#35748;&#26041;&#21521;&#27809;&#21464;&#10;&#10;    // &#35753;&#19979;&#19968;&#24352;&#22270; &#21491;&#36793;&#30340;&#23631;&#24149;&#22806;&#20934;&#22791;&#22909;&#10;    $(&#34;#focusIndex&#34; + nextI).css(&#34;left&#34;, $(window).width());&#10;    $(&#34;#focusIndex&#34; + nextI + &#34; .focusL&#34;).css(&#34;left&#34;, $(window).width() / 2);&#10;    $(&#34;#focusIndex&#34; + nextI + &#34; .focusR&#34;).css(&#34;left&#34;, $(window).width() / 2);&#10;    $(&#34;#focusIndex&#34; + currentFocusI).show(); // &#26174;&#31034;&#24403;&#21069;&#22270;&#10;    $(&#34;#focusIndex&#34; + nextI).show(); // &#26174;&#31034;&#19979;&#19968;&#24352;&#35201;&#26174;&#31034;&#30340;&#22270;&#10;    $(&#34;#focusIndex&#34; + currentFocusI + &#34; .focusL&#34;).animate(&#123; // &#24320;&#22987;&#28369;&#21160;...&#10;      left: -($(window).width() / 2 + 1000)&#10;    &#125;, 600, &#39;easeInExpo&#39;);&#10;    $(&#34;#focusIndex&#34; + currentFocusI + &#34; .focusR&#34;).animate(&#123;&#10;      left: -($(window).width() / 2 + 1000)&#10;    &#125;, 600, &#39;easeInExpo&#39;, function() &#123;&#10;      $(&#34;#focusIndex&#34; + nextI + &#34; .focusL&#34;).animate(&#123;&#10;        left: -500&#10;      &#125;, 600, &#39;easeInOutCirc&#39;);&#10;      $(&#34;#focusIndex&#34; + nextI + &#34; .focusR&#34;).animate(&#123;&#10;        left: -500&#10;      &#125;, 600, &#39;easeInOutCirc&#39;);&#10;      $(&#34;#focusIndex&#34; + currentFocusI).animate(&#123;&#10;        left: -$(window).width()&#10;      &#125;, 600, &#39;easeOutExpo&#39;);&#10;      $(&#34;#focusIndex&#34; + nextI).animate(&#123;&#10;        left: 0&#10;      &#125;, 600, &#39;easeOutExpo&#39;, function() &#123;&#10;        $(&#34;#focusIndex&#34; + currentFocusI).hide();&#10;        currentFocusI = nextI;&#10;        changeingFocus = false;&#10;      &#125;);&#10;    &#125;);&#10;  &#125; else &#123; // &#26041;&#21521;&#19982;&#40664;&#35748;&#30456;&#21453;&#10;    $(&#34;#focusIndex&#34; + nextI).css(&#34;left&#34;, -$(window).width()); // &#19979;&#19968;&#24352;&#35201;&#29616;&#23454;&#30340;&#22270;&#29255; &#22312;&#24038;&#36793;&#34255;&#22909;&#20102;&#10;    $(&#34;#focusIndex&#34; + nextI + &#34; .focusL&#34;).css(&#34;left&#34;, -($(window).width() / 2 + 1000));&#10;    $(&#34;#focusIndex&#34; + nextI + &#34; .focusR&#34;).css(&#34;left&#34;, -($(window).width() / 2 + 1000));&#10;    $(&#34;#focusIndex&#34; + currentFocusI).show();&#10;    $(&#34;#focusIndex&#34; + nextI).show();&#10;    $(&#34;#focusIndex&#34; + currentFocusI + &#34; .focusR&#34;).animate(&#123;&#10;      left: $(window).width() / 2&#10;    &#125;, 600, &#39;easeInExpo&#39;);&#10;    $(&#34;#focusIndex&#34; + currentFocusI + &#34; .focusL&#34;).animate(&#123;&#10;      left: $(window).width() / 2&#10;    &#125;, 600, &#39;easeInExpo&#39;, function() &#123;&#10;      $(&#34;#focusIndex&#34; + nextI + &#34; .focusL&#34;).animate(&#123;&#10;        left: -500&#10;      &#125;, 600, &#39;easeInOutCirc&#39;);&#10;      $(&#34;#focusIndex&#34; + nextI + &#34; .focusR&#34;).animate(&#123;&#10;        left: -500&#10;      &#125;, 600, &#39;easeInOutCirc&#39;);&#10;      $(&#34;#focusIndex&#34; + currentFocusI).animate(&#123;&#10;        left: $(window).width()&#10;      &#125;, 600, &#39;easeOutExpo&#39;);&#10;      $(&#34;#focusIndex&#34; + nextI).animate(&#123;&#10;        left: 0&#10;      &#125;, 600, &#39;easeOutExpo&#39;, function() &#123;&#10;        $(&#34;#focusIndex&#34; + currentFocusI).hide();&#10;        currentFocusI = nextI;&#10;        changeingFocus = false;&#10;      &#125;);&#10;    &#125;);&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function starFocustAm() &#123;&#10;  timerFID = setInterval(&#34;timer_tickF()&#34;, 6000); //&#27599;6&#31186;&#25191;&#34892; timer_tickF()&#20989;&#25968;&#10;&#125;&#10;&#10;function stopFocusAm() &#123;&#10;  clearInterval(timerFID);&#10;&#125;&#10;&#10;function timer_tickF() &#123;&#10;  changeFocus(true, 0); //&#25191;&#34892;changeFocus&#10;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2_set_Tab()">2 set_Tab()</h3><p>控制footer下的选项卡</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">$(function() &#123;</div><div class="line">  $(&quot;#focusIndex1&quot;).show();</div><div class="line">  默认展示第一张图片</div><div class="line">  $(&quot;#focusBar li&quot;).css(&quot;width&quot;, $(window).width());</div><div class="line">  $(&quot;#focusBar li&quot;).mouseover(function() &#123;</div><div class="line">    stopFocusAm(); // 当鼠标放到大图上 停止定时器</div><div class="line">  &#125;).mouseout(function() &#123;</div><div class="line">    starFocustAm(); // 鼠标移开 启用定时器</div><div class="line">  &#125;);</div><div class="line">  starFocustAm(); // 默认启用定时器</div><div class="line">&#125;);</div><div class="line">var timerFID;</div><div class="line"></div><div class="line">function nextPage() &#123;</div><div class="line">  changeFocus(true);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function prePage() &#123;</div><div class="line">  changeFocus(false);</div><div class="line">&#125;</div><div class="line">var currentFocusI = 1;</div><div class="line">var changeingFocus = false;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div></pre></td><td class="code"><pre><div class="line">function changeFocus(dir, nextI) &#123; // 初始值为 dir = true ; nextI = 0</div><div class="line"></div><div class="line">  if (currentFocusI == nextI) &#123; // 当前图片编号 === 被点击图片编号</div><div class="line">    return; // 不做任何操作</div><div class="line">  &#125;</div><div class="line">  if (currentFocusI &gt; nextI) &#123; // 当前图片编号 &gt; 被点击图片编号</div><div class="line">    dir = false; // 改变图片滚动默认方向</div><div class="line">  &#125; else &#123;</div><div class="line">    dir = true; // 否则不改变方向</div><div class="line">  &#125;</div><div class="line">  if (nextI == 0) &#123; // 当点击回到起点</div><div class="line">    dir = true; // 回复默认方向</div><div class="line">    var nextI = dir ? currentFocusI + 1 : currentFocusI - 1; // ?</div><div class="line">    nextI = nextI &gt; $(&quot;#focusBar li&quot;).length ? 1 : (nextI &lt; 1 ? $(&quot;#focusBar li&quot;).length : nextI);</div><div class="line">  &#125;</div><div class="line">  $(&apos;.ban_item_box a&apos;).each(function() &#123;</div><div class="line">    $(this).removeClass(&quot;a_active&quot;); //先让所有编号变灰</div><div class="line">  &#125;);</div><div class="line">  $(&apos;#nav_&apos; + nextI).addClass(&quot;a_active&quot;); // 然后把要展示的编号点亮</div><div class="line">  if ($(&quot;#focusBar li&quot;).length &lt;= 1) return; // 如果只有一张图 或者没有图片 那么 返回</div><div class="line">  if (changeingFocus) return; // 如果突然客户端点击了别的编号 那么 返回</div><div class="line">  changeingFocus = true;</div><div class="line">  $(&quot;#focusIndex&quot; + nextI).stop(false, true); // 停止 当前动画</div><div class="line">  $(&quot;#focusIndex&quot; + nextI + &quot; .focusL&quot;).stop(false, true); // 停止 当前动画</div><div class="line">  $(&quot;#focusIndex&quot; + nextI + &quot; .focusR&quot;).stop(false, true); // 停止 当前动画</div><div class="line">  /*var nextI = dir?currentFocusI+1:currentFocusI-1;</div><div class="line">  nextI = nextI&gt;$(&quot;#focusBar li&quot;).length?1:(nextI&lt;1?$(&quot;#focusBar li&quot;).length:nextI);*/</div><div class="line">  var focusWidth = $(window).width()&gt;1000?1000:$(window).width();</div><div class="line"></div><div class="line">  // 设置当前图片所在li宽度为浏览器窗口宽度 以便是图片可以居中</div><div class="line">  $(&quot;#focusIndex&quot; + currentFocusI).css(&quot;width&quot;, $(window).width());</div><div class="line">  $(&quot;#focusIndex&quot; + nextI).css(&quot;width&quot;, $(window).width()); //</div><div class="line">  if (dir) &#123; // 如果是默认方向没变</div><div class="line"></div><div class="line">    // 让下一张图 右边的屏幕外准备好</div><div class="line">    $(&quot;#focusIndex&quot; + nextI).css(&quot;left&quot;, $(window).width());</div><div class="line">    $(&quot;#focusIndex&quot; + nextI + &quot; .focusL&quot;).css(&quot;left&quot;, $(window).width() / 2);</div><div class="line">    $(&quot;#focusIndex&quot; + nextI + &quot; .focusR&quot;).css(&quot;left&quot;, $(window).width() / 2);</div><div class="line">    $(&quot;#focusIndex&quot; + currentFocusI).show(); // 显示当前图</div><div class="line">    $(&quot;#focusIndex&quot; + nextI).show(); // 显示下一张要显示的图</div><div class="line">    $(&quot;#focusIndex&quot; + currentFocusI + &quot; .focusL&quot;).animate(&#123; // 开始滑动...</div><div class="line">      left: -($(window).width() / 2 + 1000)</div><div class="line">    &#125;, 600, &apos;easeInExpo&apos;);</div><div class="line">    $(&quot;#focusIndex&quot; + currentFocusI + &quot; .focusR&quot;).animate(&#123;</div><div class="line">      left: -($(window).width() / 2 + 1000)</div><div class="line">    &#125;, 600, &apos;easeInExpo&apos;, function() &#123;</div><div class="line">      $(&quot;#focusIndex&quot; + nextI + &quot; .focusL&quot;).animate(&#123;</div><div class="line">        left: -500</div><div class="line">      &#125;, 600, &apos;easeInOutCirc&apos;);</div><div class="line">      $(&quot;#focusIndex&quot; + nextI + &quot; .focusR&quot;).animate(&#123;</div><div class="line">        left: -500</div><div class="line">      &#125;, 600, &apos;easeInOutCirc&apos;);</div><div class="line">      $(&quot;#focusIndex&quot; + currentFocusI).animate(&#123;</div><div class="line">        left: -$(window).width()</div><div class="line">      &#125;, 600, &apos;easeOutExpo&apos;);</div><div class="line">      $(&quot;#focusIndex&quot; + nextI).animate(&#123;</div><div class="line">        left: 0</div><div class="line">      &#125;, 600, &apos;easeOutExpo&apos;, function() &#123;</div><div class="line">        $(&quot;#focusIndex&quot; + currentFocusI).hide();</div><div class="line">        currentFocusI = nextI;</div><div class="line">        changeingFocus = false;</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125; else &#123; // 方向与默认相反</div><div class="line">    $(&quot;#focusIndex&quot; + nextI).css(&quot;left&quot;, -$(window).width()); // 下一张要现实的图片 在左边藏好了</div><div class="line">    $(&quot;#focusIndex&quot; + nextI + &quot; .focusL&quot;).css(&quot;left&quot;, -($(window).width() / 2 + 1000));</div><div class="line">    $(&quot;#focusIndex&quot; + nextI + &quot; .focusR&quot;).css(&quot;left&quot;, -($(window).width() / 2 + 1000));</div><div class="line">    $(&quot;#focusIndex&quot; + currentFocusI).show();</div><div class="line">    $(&quot;#focusIndex&quot; + nextI).show();</div><div class="line">    $(&quot;#focusIndex&quot; + currentFocusI + &quot; .focusR&quot;).animate(&#123;</div><div class="line">      left: $(window).width() / 2</div><div class="line">    &#125;, 600, &apos;easeInExpo&apos;);</div><div class="line">    $(&quot;#focusIndex&quot; + currentFocusI + &quot; .focusL&quot;).animate(&#123;</div><div class="line">      left: $(window).width() / 2</div><div class="line">    &#125;, 600, &apos;easeInExpo&apos;, function() &#123;</div><div class="line">      $(&quot;#focusIndex&quot; + nextI + &quot; .focusL&quot;).animate(&#123;</div><div class="line">        left: -500</div><div class="line">      &#125;, 600, &apos;easeInOutCirc&apos;);</div><div class="line">      $(&quot;#focusIndex&quot; + nextI + &quot; .focusR&quot;).animate(&#123;</div><div class="line">        left: -500</div><div class="line">      &#125;, 600, &apos;easeInOutCirc&apos;);</div><div class="line">      $(&quot;#focusIndex&quot; + currentFocusI).animate(&#123;</div><div class="line">        left: $(window).width()</div><div class="line">      &#125;, 600, &apos;easeOutExpo&apos;);</div><div class="line">      $(&quot;#focusIndex&quot; + nextI).animate(&#123;</div><div class="line">        left: 0</div><div class="line">      &#125;, 600, &apos;easeOutExpo&apos;, function() &#123;</div><div class="line">        $(&quot;#focusIndex&quot; + currentFocusI).hide();</div><div class="line">        currentFocusI = nextI;</div><div class="line">        changeingFocus = false;</div><div class="line">      &#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function starFocustAm() &#123;</div><div class="line">  timerFID = setInterval(&quot;timer_tickF()&quot;, 6000); //每6秒执行 timer_tickF()函数</div><div class="line">&#125;</div><div class="line"></div><div class="line">function stopFocusAm() &#123;</div><div class="line">  clearInterval(timerFID);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function timer_tickF() &#123;</div><div class="line">  changeFocus(true, 0); //执行changeFocus</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2-set-Tab"><a href="#2-set-Tab" class="headerlink" title="2 set_Tab()"></a>2 set_Tab()</h3><p>控制footer下的选项卡</p>
 <blockquote>
-<p>我给每个js加上了我理解的注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function set_Tab(name, cursel, n) &#123; // &#27599;&#20010;&#33756;&#21333;&#34987;&#28857;&#20987;&#37117;&#35201;&#35302;&#21457;&#36825;&#20010;&#20989;&#25968;,&#10;&#10;  for (i = 1; i &#60;= 3; i++) &#123; // &#23545;&#19977;&#20010;&#36873;&#39033;&#21345;&#36827;&#34892;&#36941;&#21382;&#10;&#10;    var menu = document.getElementById(name + i); // &#33756;&#21333;&#23545;&#35937;&#10;    var con = document.getElementById(&#34;con_&#34; + name + &#34;_&#34; + i); // &#36873;&#39033;&#21345;&#23545;&#35937;&#10;    menu.className = i == cursel ? &#34;hover1&#34; : &#34;&#34;; // &#22914;&#26524; i== cursel &#37027;&#20040;className = hover1 &#21542;&#21017; &#20026; &#34;&#34;&#10;    con.style.display = i == cursel ? &#34;block&#34; : &#34;none&#34;; // &#21516;&#19978;&#10;&#10;  &#125;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我给每个js加上了我理解的注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function set_Tab(name, cursel, n) &#123; // 每个菜单被点击都要触发这个函数,</div><div class="line"></div><div class="line">  for (i = 1; i &lt;= 3; i++) &#123; // 对三个选项卡进行遍历</div><div class="line"></div><div class="line">    var menu = document.getElementById(name + i); // 菜单对象</div><div class="line">    var con = document.getElementById(&quot;con_&quot; + name + &quot;_&quot; + i); // 选项卡对象</div><div class="line">    menu.className = i == cursel ? &quot;hover1&quot; : &quot;&quot;; // 如果 i== cursel 那么className = hover1 否则 为 &quot;&quot;</div><div class="line">    con.style.display = i == cursel ? &quot;block&quot; : &quot;none&quot;; // 同上</div><div class="line"></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="问题">问题</h4><p> 1: 如果增添新的菜单,那么html 与 javascript代码都要改动.这样不利于升级 .有优化空间…</p>
-<h3 id="3_dropMenu()">3 dropMenu()</h3><p>该函数控制最上方帮助中心的下拉菜单的出现与隐藏渐变</p>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><p> 1: 如果增添新的菜单,那么html 与 javascript代码都要改动.这样不利于升级 .有优化空间…</p>
+<h3 id="3-dropMenu"><a href="#3-dropMenu" class="headerlink" title="3 dropMenu()"></a>3 dropMenu()</h3><p>该函数控制最上方帮助中心的下拉菜单的出现与隐藏渐变</p>
 <blockquote>
-<p>我给每个js加上了我理解的注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function dropMenu(obj) &#123;&#10;  $(obj).each(function() &#123;&#10;    var theSpan = $(this); // &#33756;&#21333;&#10;    var theMenu = theSpan.find(&#34;.submenu&#34;); // &#23376;&#36873;&#39033;&#21345;&#10;    var tarHeight = theMenu.height(); // &#23376;&#36873;&#39033;&#21345;&#39640;&#24230;&#10;    theMenu.css(&#123;&#10;      height: 0, // &#25226;&#39640;&#24230;&#21644;&#36879;&#26126;&#24230;&#37117;&#35774;&#32622;&#20026;0 , &#29992;&#20110;&#21021;&#22987;&#21270;.&#10;      opacity: 0&#10;    &#125;);&#10;    theSpan.hover( // &#28155;&#21152; &#40736;&#26631;hover&#20107;&#20214;&#10;      function() &#123;&#10;        $(this).addClass(&#34;selected&#34;); // &#35774;&#32622;&#31867;&#21517; &#34920;&#31034;&#34987;&#36873;&#20013;&#10;&#10;        // &#27880;&#24847; &#36825;&#37324;&#24517;&#39035;&#35201;&#21152;stop()&#20989;&#25968;&#26469;&#28165;&#31354;theMenu&#19978;&#30340;&#20107;&#20214;,&#21542;&#21017;&#20250;&#20986;&#29616;&#25511;&#21046;&#24310;&#36831;&#30340;&#24773;&#20917;&#10;        theMenu.stop().show().animate(&#123;&#10;          height: tarHeight,&#10;          opacity: 0.9&#10;        &#125;, 400); // &#21033;&#29992;jquery animate &#20989;&#25968;&#26102;&#38388;&#39640;&#24230;&#21644;&#36890;&#26126;&#24230; 400ms &#30340;&#28176;&#21464;&#25928;&#26524;&#10;      &#125;,&#10;      function() &#123;  // &#19982;&#19978;&#30456;&#21453;&#10;        $(this).removeClass(&#34;selected&#34;);&#10;        theMenu.stop().animate(&#123;&#10;          height: 0,&#10;          opacity: 0&#10;        &#125;, 400, function() &#123;&#10;          $(this).css(&#123;&#10;            display: &#34;none&#34;&#10;          &#125;);&#10;        &#125;);&#10;      &#125;&#10;    );&#10;  &#125;);&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我给每个js加上了我理解的注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">function dropMenu(obj) &#123;</div><div class="line">  $(obj).each(function() &#123;</div><div class="line">    var theSpan = $(this); // 菜单</div><div class="line">    var theMenu = theSpan.find(&quot;.submenu&quot;); // 子选项卡</div><div class="line">    var tarHeight = theMenu.height(); // 子选项卡高度</div><div class="line">    theMenu.css(&#123;</div><div class="line">      height: 0, // 把高度和透明度都设置为0 , 用于初始化.</div><div class="line">      opacity: 0</div><div class="line">    &#125;);</div><div class="line">    theSpan.hover( // 添加 鼠标hover事件</div><div class="line">      function() &#123;</div><div class="line">        $(this).addClass(&quot;selected&quot;); // 设置类名 表示被选中</div><div class="line"></div><div class="line">        // 注意 这里必须要加stop()函数来清空theMenu上的事件,否则会出现控制延迟的情况</div><div class="line">        theMenu.stop().show().animate(&#123;</div><div class="line">          height: tarHeight,</div><div class="line">          opacity: 0.9</div><div class="line">        &#125;, 400); // 利用jquery animate 函数时间高度和通明度 400ms 的渐变效果</div><div class="line">      &#125;,</div><div class="line">      function() &#123;  // 与上相反</div><div class="line">        $(this).removeClass(&quot;selected&quot;);</div><div class="line">        theMenu.stop().animate(&#123;</div><div class="line">          height: 0,</div><div class="line">          opacity: 0</div><div class="line">        &#125;, 400, function() &#123;</div><div class="line">          $(this).css(&#123;</div><div class="line">            display: &quot;none&quot;</div><div class="line">          &#125;);</div><div class="line">        &#125;);</div><div class="line">      &#125;</div><div class="line">    );</div><div class="line">  &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h4 id="问题-1">问题</h4><ul>
+<h4 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h4><ul>
 <li>纯代码实现的透明度难免带来一些兼容性问题</li>
 <li>animate 函数实现渐变要比纯生javascript更吃浏览器性能 (还好用的地方比较少)</li>
 </ul>
-<h3 id="4_Zoom()">4 Zoom()</h3><p>控制图片放大比例 , 并且保证了不会让图片周围留下空白</p>
+<h3 id="4-Zoom"><a href="#4-Zoom" class="headerlink" title="4 Zoom()"></a>4 Zoom()</h3><p>控制图片放大比例 , 并且保证了不会让图片周围留下空白</p>
 <blockquote>
-<p>我给每个js加上了我理解的注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">function Zoom(obj, width, height) &#123;&#10;  var img = new Image();&#10;  img.src = obj.src;&#10;&#10;  // &#21462;&#25918;&#22823;&#27604;&#20363;&#20026;&#38656;&#27714;&#19982;&#23454;&#38469;&#30340;&#27604;&#20540;&#26356;&#22823;&#30340;&#19968;&#37096;&#20998;,&#36825;&#26679;&#34429;&#28982;&#20250;&#26377;&#19968;&#37096;&#20998;&#20250;&#34987;&#36974;&#25377;,&#20294;&#26159;&#19981;&#20250;&#20986;&#29616;&#31354;&#30333;&#10;  var scale = Math.max(width / img.width, height / img.height);&#10;  var newWidth = img.width * scale; // &#25353;&#27604;&#20363;&#32553;&#25918;&#21518;&#30340;&#23610;&#23544;&#10;  var newHeight = img.height * scale; //&#10;  var div = obj.parentNode; // &#22312;&#22827;&#32423;&#21019;&#24314;dom&#20803;&#32032;div&#10;  obj.width = newWidth; // &#22312;&#20445;&#35777;&#20102;&#21407;&#22270;&#29255;&#27604;&#20363;&#30340;&#24773;&#20917;&#19979; &#20026;&#22270;&#29255;&#37325;&#26032;&#36171;&#20540;&#10;  obj.height = newHeight;&#10;  div.style.width = width + &#34;px&#34;;&#10;  div.style.height = height + &#34;px&#34;;&#10;  div.style.overflow = &#34;hidden&#34;; // &#35774;&#32622;div&#30340;overflow&#38544;&#34255;&#10;  obj.style.marginLeft = (width - newWidth) / 2 + &#34;px&#34;; // &#35753;&#22270;&#29255;&#23621;&#20013;&#10;  obj.style.marginTop = (height - newHeight) / 2 + &#34;px&#34;;&#10;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我给每个js加上了我理解的注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Zoom(obj, width, height) &#123;</div><div class="line">  var img = new Image();</div><div class="line">  img.src = obj.src;</div><div class="line"></div><div class="line">  // 取放大比例为需求与实际的比值更大的一部分,这样虽然会有一部分会被遮挡,但是不会出现空白</div><div class="line">  var scale = Math.max(width / img.width, height / img.height);</div><div class="line">  var newWidth = img.width * scale; // 按比例缩放后的尺寸</div><div class="line">  var newHeight = img.height * scale; //</div><div class="line">  var div = obj.parentNode; // 在夫级创建dom元素div</div><div class="line">  obj.width = newWidth; // 在保证了原图片比例的情况下 为图片重新赋值</div><div class="line">  obj.height = newHeight;</div><div class="line">  div.style.width = width + &quot;px&quot;;</div><div class="line">  div.style.height = height + &quot;px&quot;;</div><div class="line">  div.style.overflow = &quot;hidden&quot;; // 设置div的overflow隐藏</div><div class="line">  obj.style.marginLeft = (width - newWidth) / 2 + &quot;px&quot;; // 让图片居中</div><div class="line">  obj.style.marginTop = (height - newHeight) / 2 + &quot;px&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 </blockquote>
-<h2 id="plugins">plugins</h2><ul>
+<h2 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h2><ul>
 <li><ol>
 <li>lxb.js // 百度的离线包 不解释</li>
 </ol>
@@ -254,23 +306,24 @@
     
   </div>
 
- </div>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
-              <div class="ds-thread" data-thread-key="personal/smartedu.html"
-                   data-title="Smartstudy 网站js分析" data-url="http://blog.netpi.me/personal/smartedu.html">
-              </div>
-            
           </div>
-        
-      </div>
+          
 
-      
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="personal/smartedu.html"
+           data-title="Smartstudy 网站js分析" data-url="http://netpi.me/personal/smartedu.html">
+      </div>
+    
+  </div>
+
+
+        </div>
         
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -288,11 +341,13 @@
       
 
       <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="/images/default_avatar.jpg" alt="Netpi" itemprop="image"/>
-          <p class="site-author-name" itemprop="name">Netpi</p>
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="netpi" />
+          <p class="site-author-name" itemprop="name">netpi</p>
+          <p class="site-description motion-element" itemprop="description">东泽-Netpi moon@netpi.me</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">分享代码 - 陈东泽-Netpi moon@netpi.me</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -301,43 +356,46 @@
             </a>
           </div>
 
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">6</span>
-              <span class="site-state-item-name">分类</span>
+          
+            <div class="site-state-item site-state-categories">
               
-          </div>
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">11</span>
-              <span class="site-state-item-name">标签</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
-        
-          <div class="feed-link motion-element">
-            <a href="/atom.xml" rel="alternate">
-              <i class="menu-item-icon icon-next-feed"></i>
-              RSS
-            </a>
-          </div>
         
 
         <div class="links-of-author motion-element">
           
             
               <span class="links-of-author-item">
-                <a href="http://github.com/netpi" target="_blank">
-                  <i class="fa fa-github"></i> GitHub
+                <a href="http://github.com/netpi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
                 </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank">
-                  <i class="fa fa-linkedin"></i> linkedin
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
                 </a>
               </span>
             
@@ -347,22 +405,28 @@
         
         
           <div class="cc-license motion-element" itemprop="license">
-            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
               <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
             </a>
           </div>
         
 
-        <div class="links-of-author motion-element">
-          
-            <p class="site-author-name">友情连接</p>
-            
-              <span class="links-of-author-item">
-                <a href="http://joehill.me" target="_blank">Joehill</a>
-              </span>
-            
-          
-        </div>
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
+                </li>
+              
+            </ul>
+          </div>
+        
 
       </section>
 
@@ -372,44 +436,112 @@
   </aside>
 
 
-      
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright" >
+      <div class="footer-inner">
+        <div class="copyright" >
   
   &copy; 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart fa fa-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">Netpi</span>
+  <span class="author" itemprop="copyrightHolder">netpi</span>
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
   主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
+        
 
- </div>
+        
+      </div>
     </footer>
 
-    <div class="back-to-top"></div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
   </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
   
   
-    
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
 
   
     
@@ -427,61 +559,29 @@
       || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
   </script>
+
+  
     
-     
-
-
-    
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
   
 
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.2" id="motion.global"></script>
 
 
 
 
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.2"></script>
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
-      }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-
-      motionIntegrator.bootstrap();
-    });
-  </script>
 
   
   
 
   
+
   
 
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+
+  
+
+
 </body>
 </html>
