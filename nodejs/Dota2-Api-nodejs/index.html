@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="东泽 - Netpi">
 <meta property="og:description" content="利用api调用 Dota2 英雄比赛数据">
 <meta property="og:image" content="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500">
-<meta property="og:updated_time" content="2016-11-01T09:35:24.000Z">
+<meta property="og:updated_time" content="2017-01-22T09:57:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dota2 Api nodejs">
 <meta name="twitter:description" content="利用api调用 Dota2 英雄比赛数据">
@@ -123,7 +123,7 @@
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
-
+  
   
 
 
@@ -268,6 +268,16 @@
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- www.netpi.me -->
+              <ins class="adsbygoogle"
+                  style="display:block"
+                  data-ad-client="ca-pub-4499485001601213"
+                  data-ad-slot="1572502484"
+                  data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
             
 
   <div id="posts" class="posts-expand">
@@ -366,7 +376,8 @@
       
 
       
-        <p><blockquote class="blockquote-center"><br>  利用api调用 Dota2 英雄比赛数据<br></blockquote><br><a id="more"></a><br><img src="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500" alt=""><br>a node-plugin for dota2 ;<br><a href="https://github.com/netpi/dota2" target="_blank" rel="external">github 源码地址</a></p>
+        <p><img src="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500" alt=""></p>
+<p><blockquote class="blockquote-center"><br>  利用api调用 Dota2 英雄比赛数据<br></blockquote><br><a id="more"></a><br>a node-plugin for dota2 ;<br><a href="https://github.com/netpi/dota2" target="_blank" rel="external">github 源码地址</a></p>
 <h2 id="GETTING-A-KEY"><a href="#GETTING-A-KEY" class="headerlink" title="GETTING A KEY"></a>GETTING A KEY</h2><p>First off get a dev key from here, <a href="http://steamcommunity.com/dev/apikey" target="_blank" rel="external">http://steamcommunity.com/dev/apikey</a> and login with your Steam account and you will get unique key.</p>
 <h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install dota --save</div></pre></td></tr></table></figure>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Dota2Api = <span class="built_in">require</span>(<span class="string">'dota'</span>).dota2api;</div><div class="line"></div><div class="line"><span class="keyword">var</span> key = <span class="string">'your key'</span>; <span class="comment">//Your personal API key (from above)</span></div><div class="line"><span class="keyword">var</span> language = <span class="string">'zh_CN'</span>;<span class="comment">// The language to retrieve results in (default is en_us) (see http://en.wikipedia.org/wiki/ISO_639-1 for the language codes (first two characters) and http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes for the country codes (last two characters))</span></div><div class="line"><span class="keyword">var</span> format = <span class="string">'JSON'</span> The format to retrieve results <span class="keyword">in</span> (<span class="string">"JSON"</span> or <span class="string">"XML"</span>)</div><div class="line"><span class="keyword">var</span> dota2api = <span class="keyword">new</span> Dota2Api(key,language,format)</div><div class="line"></div><div class="line"><span class="keyword">var</span> config=&#123;</div><div class="line">  <span class="attr">account_id</span> : <span class="string">'232210304'</span>,</div><div class="line">  <span class="attr">matches_requested</span> : <span class="number">10</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// to get the latest 10 matches played by person whth 32-bit ID 232210304</span></div><div class="line">dota2api.getMatchHistory(config,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(err)&#123;</div><div class="line">    <span class="keyword">throw</span> err;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">// you will get the result</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
