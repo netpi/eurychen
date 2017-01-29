@@ -1,1 +1,10 @@
-http://blog.netpi.me/uncategorized/gitrevoke/
+http://www.netpi.me/uncategorized/gitrevoke/
+http://www.netpi.me/%E6%97%B6%E9%97%B4/hello-world-1/
+http://www.netpi.me/uncategorized/baidu-ocr-nodejs/
+http://www.netpi.me/nginx/nginx-conf/
+http://www.netpi.me/%E5%AE%9E%E7%94%A8/hexo/
+http://www.netpi.me/nodejs/Dota2-Api-nodejs/
+http://www.netpi.me/nodejs/ueditor-nodejs/
+http://www.netpi.me/iOS/PokemonGo/
+http://www.netpi.me/cook/bean-fish/
+http://www.netpi.me/nginx/nginx-Installation/

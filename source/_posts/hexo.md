@@ -259,6 +259,6 @@ npm install hexo-generator-sitemap
 
 启动服务器，用浏览器打开 用浏览器打开 http://localhost:4000/sitemap.xml 发现site已经生效
 
-## * License
+## License
 
->> 注 ：转载 请注明出处 [http://blog.netpi.me/实用/hexo](http://blog.netpi.me/实用/hexo)
+> 注 ：转载 请注明出处 [http://blog.netpi.me/实用/hexo](http://blog.netpi.me/实用/hexo)

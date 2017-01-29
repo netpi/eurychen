@@ -6,11 +6,11 @@ tags:
 categories:
 - nodejs
 ---
+![](http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500)
 <blockquote class="blockquote-center">
   利用api调用 Dota2 英雄比赛数据
 </blockquote>
 <!--more-->
-![](http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500)
 a node-plugin for dota2 ;
 [github 源码地址](https://github.com/netpi/dota2)
 
