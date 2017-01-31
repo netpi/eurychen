@@ -174,9 +174,9 @@ blog根目录下会生成public文件夹-里面就是刚才生成的静态文件
 
 hexo 的详细实用说明请参看[官方文档](http://hexo.io/docs/)
 
-## 3 将blog部署到 github
+## 3 将blog部署到 github/bae
 
-### 3.1 部署到github
+### 3.1 部署到github/bae
 部署到github 非常简单。因为hexo已经为你集成好了发布到github的配置。
 
 我们只需要 修改 blog 目录下的 _config.yml 文件
@@ -200,6 +200,9 @@ hexo deploy
 你会发现public 目录下的页面已经发布到github gh-pages 分支了
 
 往后我们要做的就是用自己的域名指向 github。
+
+**部署到bae请参考** :[放弃github pages,把hexo博客部署到百度BAE吧](http://www.netpi.me/code/hexo-bae-configure/)
+
 
 ### 3.2 域名指向
 
