@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://www.netpi.me/%E5%AE%9E%E7%94%A8/hexo/</loc>
+    <lastmod>2017-01-31T15:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>hexo + github + 多说 来搭建免费博客</title>
+        <pubTime>2014-10-19T04:56:58.000Z</pubTime>
+        
+        <tag>github</tag>
+         
+        <tag>hexo</tag>
+         
+        <tag>多说</tag>
+         
+         
+           
+             
+              <breadCrumb title="实用" url="http://www.netpi.me/categories/%E5%AE%9E%E7%94%A8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.netpi.me/code/hexo-bae-configure/</loc>
     <lastmod>2017-01-31T09:12:07.000Z</lastmod>
     <data>
@@ -21,30 +45,6 @@
            
              
               <breadCrumb title="code" url="http://www.netpi.me/categories/code/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.netpi.me/%E5%AE%9E%E7%94%A8/hexo/</loc>
-    <lastmod>2017-01-22T09:58:48.000Z</lastmod>
-    <data>
-        <display>
-        <title>hexo + github + 多说 来搭建免费博客</title>
-        <pubTime>2014-10-19T04:56:58.000Z</pubTime>
-        
-        <tag>github</tag>
-         
-        <tag>hexo</tag>
-         
-        <tag>多说</tag>
-         
-         
-           
-             
-              <breadCrumb title="实用" url="http://www.netpi.me/categories/%E5%AE%9E%E7%94%A8/"/>
           
         </display>
     </data>
