@@ -1,0 +1,1028 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="nodejs,dota2,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
+
+
+
+
+
+
+<meta name="description" content="利用api调用 Dota2 英雄比赛数据">
+<meta name="keywords" content="nodejs,dota2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dota2 Api nodejs">
+<meta property="og:url" content="http://www.netpi.me/nodejs/Dota2-Api-nodejs/index.html">
+<meta property="og:site_name" content="东泽 - Netpi">
+<meta property="og:description" content="利用api调用 Dota2 英雄比赛数据">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500">
+<meta property="og:updated_time" content="2017-01-22T09:57:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dota2 Api nodejs">
+<meta name="twitter:description" content="利用api调用 Dota2 英雄比赛数据">
+<meta name="twitter:image" content="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.netpi.me/nodejs/Dota2-Api-nodejs/">
+
+
+  <title> Dota2 Api nodejs | 东泽 - Netpi </title>
+</head>
+
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
+  
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61249489-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?df80594e333f3195cd13084356b208fc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">东泽 - Netpi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- www.netpi.me -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4499485001601213" data-ad-slot="1572502484" data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Dota2 Api nodejs
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-16T00:12:57+08:00" content="2015-01-16">
+              2015-01-16
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/nodejs/" itemprop="url" rel="index">
+                    <span itemprop="name">nodejs</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/nodejs/Dota2-Api-nodejs/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="nodejs/Dota2-Api-nodejs/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/nodejs/Dota2-Api-nodejs/" class="leancloud_visitors" data-flag-title="Dota2 Api nodejs">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="http://bnetpi.qiniudn.com/dota2/bg.jpg?imageView2/2/w/500" alt=""></p>
+<p><blockquote class="blockquote-center"><br>  利用api调用 Dota2 英雄比赛数据<br></blockquote><br><a id="more"></a><br>a node-plugin for dota2 ;<br><a href="https://github.com/netpi/dota2" target="_blank" rel="external">github 源码地址</a></p>
+<h2 id="GETTING-A-KEY"><a href="#GETTING-A-KEY" class="headerlink" title="GETTING A KEY"></a>GETTING A KEY</h2><p>First off get a dev key from here, <a href="http://steamcommunity.com/dev/apikey" target="_blank" rel="external">http://steamcommunity.com/dev/apikey</a> and login with your Steam account and you will get unique key.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install dota --save</div></pre></td></tr></table></figure>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Dota2Api = <span class="built_in">require</span>(<span class="string">'dota'</span>).dota2api;</div><div class="line"></div><div class="line"><span class="keyword">var</span> key = <span class="string">'your key'</span>; <span class="comment">//Your personal API key (from above)</span></div><div class="line"><span class="keyword">var</span> language = <span class="string">'zh_CN'</span>;<span class="comment">// The language to retrieve results in (default is en_us) (see http://en.wikipedia.org/wiki/ISO_639-1 for the language codes (first two characters) and http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes for the country codes (last two characters))</span></div><div class="line"><span class="keyword">var</span> format = <span class="string">'JSON'</span> The format to retrieve results <span class="keyword">in</span> (<span class="string">"JSON"</span> or <span class="string">"XML"</span>)</div><div class="line"><span class="keyword">var</span> dota2api = <span class="keyword">new</span> Dota2Api(key,language,format)</div><div class="line"></div><div class="line"><span class="keyword">var</span> config=&#123;</div><div class="line">  <span class="attr">account_id</span> : <span class="string">'232210304'</span>,</div><div class="line">  <span class="attr">matches_requested</span> : <span class="number">10</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// to get the latest 10 matches played by person whth 32-bit ID 232210304</span></div><div class="line">dota2api.getMatchHistory(config,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</div><div class="line">  <span class="keyword">if</span>(err)&#123;</div><div class="line">    <span class="keyword">throw</span> err;</div><div class="line">  &#125;<span class="keyword">else</span>&#123;</div><div class="line">    <span class="comment">// you will get the result</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h2 id="About-Api"><a href="#About-Api" class="headerlink" title="About Api"></a>About Api</h2><h3 id="getMatchHistory"><a href="#getMatchHistory" class="headerlink" title="getMatchHistory()"></a>getMatchHistory()</h3><p>sed to get a list of matches played.</p>
+<h4 id="Available-Options"><a href="#Available-Options" class="headerlink" title="Available Options"></a>Available Options</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config &#123;</div><div class="line">  <span class="attr">hero_id</span>: &lt; id &gt; , // Search for matches with a specific hero being played (hero ID, not name, see HEROES below)</div><div class="line">  game_mode: &lt; mode &gt; , // Search for matches of a given mode (see below)</div><div class="line">  skill: &lt; skill &gt; , // 0 for any, 1 for normal, 2 for high, 3 for very high skill (default is 0)</div><div class="line">  min_players: &lt; count &gt; , // the minimum number of players required in the match</div><div class="line">  account_id: &lt; id &gt; , // Search for all matches for the given user (32-bit or 64-bit steam ID)</div><div class="line">  league_id: &lt; id &gt; , // matches for a particular league</div><div class="line">  start_at_match_id: &lt; id &gt; , // Start the search at the indicated match id, descending</div><div class="line">  matches_requested: &lt; n &gt; , // Maximum is 25 matches (default is 25)</div><div class="line">  tournament_games_only: &lt; string &gt; // set to only show tournament games</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dota2api.getMatchHistory(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="keyword">throw</span> err;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// you will get the result</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="getMatchDetails"><a href="#getMatchDetails" class="headerlink" title="getMatchDetails()"></a>getMatchDetails()</h3><p>Used to get detailed information about a specified match.</p>
+<h4 id="Available-options"><a href="#Available-options" class="headerlink" title="Available options:"></a>Available options:</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config=&#123;</div><div class="line">  match_id=&lt;id&gt; // the match's ID</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dota2api.getMatchDetails(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (err) &#123;</div><div class="line">    <span class="keyword">throw</span> err;</div><div class="line">  &#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="comment">// you will get the result</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h3 id="getHeroes"><a href="#getHeroes" class="headerlink" title="getHeroes()"></a>getHeroes()</h3><p>Used to get an UP-TO-DATE list of heroes.</p>
+<h4 id="Available-Options-1"><a href="#Available-Options-1" class="headerlink" title="Available Options"></a>Available Options</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config=&#123;</div><div class="line">  <span class="comment">// nothing ...</span></div><div class="line">  language:<span class="string">'en'</span> <span class="comment">// you can also set language just for this request</span></div><div class="line">  format : <span class="string">'XML'</span> <span class="comment">// you can also set format just for this request</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="Result-Field-Format"><a href="#Result-Field-Format" class="headerlink" title="Result Field Format:"></a>Result Field Format:</h4><ul>
+<li>heroes - an array of the heroes:<ul>
+<li>name - the hero’s in-game “code name”</li>
+<li>id - the hero’s numeric ID</li>
+<li>localized_name - the hero’s text name (language specific result - this field is not present if no language is specified)</li>
+</ul>
+</li>
+<li>count - the total number of heroes in the list</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dota2api.getHeroes(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (err) &#123;</div><div class="line">     <span class="keyword">throw</span> err;</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">     <span class="comment">// you will get the result</span></div><div class="line">     <span class="built_in">console</span>.log(data);</div><div class="line">   &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<h3 id="getLeagueListing"><a href="#getLeagueListing" class="headerlink" title="getLeagueListing()"></a>getLeagueListing()</h3><p>Used to get a list of the tournament leagues that are available for viewing in the client (i.e. you can buy a ticket to them).<br>Intended for use in conjunction with GetLiveLeagueGames.</p>
+<h4 id="Available-Options-2"><a href="#Available-Options-2" class="headerlink" title="Available Options"></a>Available Options</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config=&#123;</div><div class="line">  <span class="comment">// nothing ...</span></div><div class="line">  language:<span class="string">'en'</span> <span class="comment">// you can also set language just for this request</span></div><div class="line">  format : <span class="string">'XML'</span> <span class="comment">// you can also set format just for this request</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dota2api.getLeagueListing(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (err) &#123;</div><div class="line">     <span class="keyword">throw</span> err;</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">     <span class="comment">// you will get the result</span></div><div class="line">     <span class="built_in">console</span>.log(data);</div><div class="line">   &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<h3 id="getLiveLeagueGames"><a href="#getLiveLeagueGames" class="headerlink" title="getLiveLeagueGames()"></a>getLiveLeagueGames()</h3><p>Used to get a list of the tournament leagues that are available for viewing in the client (i.e. you can buy a ticket to them).<br>Intended for use in conjunction with GetLiveLeagueGames.</p>
+<h4 id="Available-Options-3"><a href="#Available-Options-3" class="headerlink" title="Available Options"></a>Available Options</h4><p>Common options only (see above) - Note that if no language is specified, the API will return the in-game “string” placeholders for all fields marked with (language specific).</p>
+<h4 id="Result-Field-Format-1"><a href="#Result-Field-Format-1" class="headerlink" title="Result Field Format:"></a>Result Field Format:</h4><ul>
+<li>leagues - an array of the leagues:<ul>
+<li>name - the league’s full name (language specific)</li>
+<li>leagueid - the league’s numeric ID</li>
+<li>escription - a description of the leauge (language specific)</li>
+<li>tournament_url - the url of the tournament’s home page</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dota2api.getLiveLeagueGames(config, <span class="function"><span class="keyword">function</span>(<span class="params">err, data</span>) </span>&#123;</div><div class="line">   <span class="keyword">if</span> (err) &#123;</div><div class="line">     <span class="keyword">throw</span> err;</div><div class="line">   &#125; <span class="keyword">else</span> &#123;</div><div class="line">     <span class="comment">// you will get the result</span></div><div class="line">     <span class="built_in">console</span>.log(data);</div><div class="line">   &#125;</div><div class="line"> &#125;)</div></pre></td></tr></table></figure>
+<h3 id="getMatchHistoryBySequenceNum"><a href="#getMatchHistoryBySequenceNum" class="headerlink" title="getMatchHistoryBySequenceNum()"></a>getMatchHistoryBySequenceNum()</h3><p>Used to get the matches in the order which they were recorded (i.e. sorted ascending by match_seq_num).<br>This means that the first match on the first page of results returned by the call will be the very first public mm-match recorded in the stats.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config=&#123;</div><div class="line">  start_at_match_seq_num=&lt;id&gt;,</div><div class="line">  matches_requested=&lt;n&gt;</div><div class="line">&#125;</div><div class="line">dota2api.getMatchHistoryBySequenceNum(config, function(err, data) &#123;</div><div class="line">    if (err) &#123;</div><div class="line">      throw err;</div><div class="line">    &#125; else &#123;</div><div class="line">      // you will get the result</div><div class="line">      console.log(data);</div><div class="line">    &#125;</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
+<h2 id="TEST"><a href="#TEST" class="headerlink" title="TEST"></a>TEST</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make <span class="built_in">test</span></div></pre></td></tr></table></figure>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>The MIT license</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="netpi WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nodejs/" rel="tag">#nodejs</a>
+          
+            <a href="/tags/dota2/" rel="tag">#dota2</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/nginx/nginx-conf/" rel="next" title="Nginx 安装 启动 停止 重启">
+                <i class="fa fa-chevron-left"></i> Nginx 安装 启动 停止 重启
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/iOS/PokemonGo/" rel="prev" title="最快捷 PokemonGo 安装教程 - 解决了锁区问题">
+                最快捷 PokemonGo 安装教程 - 解决了锁区问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="nodejs/Dota2-Api-nodejs/" data-title="Dota2 Api nodejs" data-url="http://www.netpi.me/nodejs/Dota2-Api-nodejs/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="netpi">
+          <p class="site-author-name" itemprop="name">netpi</p>
+          <p class="site-description motion-element" itemprop="description">代码, 产品, 摄影, mac</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/netpi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#GETTING-A-KEY"><span class="nav-number">1.</span> <span class="nav-text">GETTING A KEY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installation"><span class="nav-number">2.</span> <span class="nav-text">Installation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Usage"><span class="nav-number">3.</span> <span class="nav-text">Usage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Api"><span class="nav-number">4.</span> <span class="nav-text">About Api</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#getMatchHistory"><span class="nav-number">4.1.</span> <span class="nav-text">getMatchHistory()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Available-Options"><span class="nav-number">4.1.1.</span> <span class="nav-text">Available Options</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getMatchDetails"><span class="nav-number">4.2.</span> <span class="nav-text">getMatchDetails()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Available-options"><span class="nav-number">4.2.1.</span> <span class="nav-text">Available options:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getHeroes"><span class="nav-number">4.3.</span> <span class="nav-text">getHeroes()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Available-Options-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">Available Options</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Result-Field-Format"><span class="nav-number">4.3.2.</span> <span class="nav-text">Result Field Format:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getLeagueListing"><span class="nav-number">4.4.</span> <span class="nav-text">getLeagueListing()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Available-Options-2"><span class="nav-number">4.4.1.</span> <span class="nav-text">Available Options</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getLiveLeagueGames"><span class="nav-number">4.5.</span> <span class="nav-text">getLiveLeagueGames()</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Available-Options-3"><span class="nav-number">4.5.1.</span> <span class="nav-text">Available Options</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Result-Field-Format-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">Result Field Format:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getMatchHistoryBySequenceNum"><span class="nav-number">4.6.</span> <span class="nav-text">getMatchHistoryBySequenceNum()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TEST"><span class="nav-number">5.</span> <span class="nav-text">TEST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">6.</span> <span class="nav-text">License</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">netpi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"netpi"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("0aLmykqteU8sXRpwNaUfbFUk-gzGzoHsz", "eVgpxMMWkpzX0aY8dfN4PBqy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

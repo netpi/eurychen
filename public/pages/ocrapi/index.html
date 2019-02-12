@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>baidu-ocr-api by netpi</title>
+    <link rel="stylesheet" href="https://netpi.github.io/baidu-ocr-api/assets/css/style.css?v=f8cfa2393b46e8e72b752a229291e53a18bc53ed">
+    <script src="./s/jquery.min.js"></script>
+    <script src="https://netpi.github.io/baidu-ocr-api/assets/js/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>baidu-ocr-api</h1>
+        <p>:eyeglasses: Baidu OCR Api For Node</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/netpi/baidu-ocr-api" class="button fork"><strong>View On GitHub</strong></a>
+        
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h2 id="baidu-ocr-apihttpsbcebaiducomdococrproductdescriptionhtmle4bb8be7bb8d-for-nodejs"><a href="https://bce.baidu.com/doc/OCR/ProductDescription.html#.E4.BB.8B.E7.BB.8D">Baidu-OCR-API</a> For Nodejs</h2>
+
+<p><a href="https://npmjs.org/package/baidu-ocr-api"><img src="http://img.shields.io/npm/v/baidu-ocr-api.svg" alt="NPM version" /></a> <a href="https://travis-ci.org/netpi/baidu-ocr-api"><img src="https://travis-ci.org/netpi/baidu-ocr-api.svg?branch=master" alt="Build Status" /></a> <a href="https://coveralls.io/r/netpi/baidu-ocr-api"><img src="https://coveralls.io/repos/netpi/baidu-ocr-api/badge.svg?branch=master&amp;service=github" alt="Coveralls Status" /></a></p>
+
+<p><a href="https://npmjs.org/package/baidu-ocr-api"><img src="http://img.shields.io/npm/dm/baidu-ocr-api.svg" alt="Downloads" /></a></p>
+
+<h3 id="advantages">Advantages</h3>
+<ul>
+  <li>支持本地图片 外部图片(速度取决图片大小)</li>
+  <li>识别简单的验证码</li>
+  <li>平时相机拍摄书本的文字,基本能达到 95%</li>
+  <li>支持 shell/nodejs 全局安装可在控制台直接运行</li>
+  <li>bluebird/promise 接口操作灵活</li>
+</ul>
+
+<h3 id="install--usage">Install &amp; Usage</h3>
+
+<h4 id="global">1. Global</h4>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>npm install baidu-ocr-api -g
+
+ocr --help
+
+<span class="c"># 远程图片</span>
+ocr http://7pun4e.com1.z0.glb.clouddn.com/test.jpg
+
+<span class="c"># 本地图片</span>
+ocr ./test.jpg
+
+</code></pre>
+</div>
+<p>##### 效果图</p>
+
+<p><img src="https://raw.githubusercontent.com/netpi/baidu-ocr-api/master/examples/test01.jpg" alt="" /></p>
+
+<p>的早期世界观是建立在《魔兽争霸3：冰封王座》的基础上的，因此与现在暴雪公司的《魔兽世界》的背景设定有一定的联系，但由于版本更迭又略有不同。整个地图中地形名费伍德森林，费伍德森林是网络游戏《魔兽世界》中的游戏地图，位于卡利姆多境内的一片森林。这片由森林和草场构成的繁荣动荡的土地曾经由卡尔多雷掌管，并曾经处于半神塞纳留斯的保护下。燃烧军团的铁蹄践踏了这片土地，没有被毁灭的树木和生物则被恶魔的暴行永远的诅咒着</p>
+
+<h4 id="nodejs">2. Nodejs</h4>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>npm install baidu-ocr-api --save
+
+</code></pre>
+</div>
+<p>FYI <a href="https://github.com/netpi/baidu-ocr-api/tree/master/examples">examples</a></p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="cm">/**
+
+登陆 百度bcs控制台中心 申请access key
+https://console.bce.baidu.com/iam/#/iam/accesslist
+
+**/</span>
+<span class="kd">var</span> <span class="nx">ak</span> <span class="o">=</span> <span class="s1">'your ak'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">sk</span> <span class="o">=</span> <span class="s1">'your sk'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">ocr</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'baidu-ocr-api'</span><span class="p">).</span><span class="nx">create</span><span class="p">(</span><span class="nx">ak</span><span class="p">,</span><span class="nx">sk</span><span class="p">);</span>
+<span class="c1">// 外部图片</span>
+<span class="nx">ocr</span><span class="p">.</span><span class="nx">scan</span><span class="p">({</span>
+  <span class="na">url</span><span class="p">:</span><span class="s1">'http://7pun4e.com1.z0.glb.clouddn.com/test.jpg'</span><span class="p">,</span> <span class="c1">// 支持本地路径</span>
+  <span class="na">type</span><span class="p">:</span><span class="s1">'text'</span><span class="p">,</span>
+<span class="p">}).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">)</span>
+<span class="p">}).</span><span class="k">catch</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'err'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+<span class="p">})</span>
+
+</code></pre>
+</div>
+
+<h3 id="test">Test</h3>
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code>make <span class="nb">test
+</span>make cov <span class="c"># Coverage rate</span>
+</code></pre>
+</div>
+<p>### License MIT</p>
+
+
+
+      </section>
+      <footer>
+        
+          <p>Project maintained by <a href="https://github.com/netpi">netpi</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+
+    
+
+  </body>
+</html>

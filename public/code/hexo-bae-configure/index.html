@@ -1,0 +1,1049 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="code,hexo,BAE,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
+
+
+
+
+
+
+<meta name="description" content="让你的博客访问速度 飞起来">
+<meta name="keywords" content="code,hexo,BAE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="放弃github pages,把hexo博客部署到百度BAE吧">
+<meta property="og:url" content="http://www.netpi.me/code/hexo-bae-configure/index.html">
+<meta property="og:site_name" content="东泽 - Netpi">
+<meta property="og:description" content="让你的博客访问速度 飞起来">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://cdn.netpi.me/blog/2r8ou.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/j72xf.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/apbxi.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/uaoke.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/bf3ow.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/eudkp.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/hds4g.jpg?imageslim">
+<meta property="og:image" content="http://cdn.netpi.me/blog/awvbm.jpg?imageslim">
+<meta property="og:updated_time" content="2017-01-31T09:12:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="放弃github pages,把hexo博客部署到百度BAE吧">
+<meta name="twitter:description" content="让你的博客访问速度 飞起来">
+<meta name="twitter:image" content="http://cdn.netpi.me/blog/2r8ou.jpg?imageslim">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.netpi.me/code/hexo-bae-configure/">
+
+
+  <title> 放弃github pages,把hexo博客部署到百度BAE吧 | 东泽 - Netpi </title>
+</head>
+
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
+  
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61249489-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?df80594e333f3195cd13084356b208fc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">东泽 - Netpi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- www.netpi.me -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4499485001601213" data-ad-slot="1572502484" data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                放弃github pages,把hexo博客部署到百度BAE吧
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-01-31T10:10:19+08:00" content="2017-01-31">
+              2017-01-31
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/code/" itemprop="url" rel="index">
+                    <span itemprop="name">code</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/code/hexo-bae-configure/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="code/hexo-bae-configure/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/code/hexo-bae-configure/" class="leancloud_visitors" data-flag-title="放弃github pages,把hexo博客部署到百度BAE吧">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><br>让你的博客访问速度 飞起来<br></blockquote>
+
+<a id="more"></a>
+<h2 id="博客部署到Github-Pages的问题"><a href="#博客部署到Github-Pages的问题" class="headerlink" title="博客部署到Github Pages的问题"></a>博客部署到Github Pages的问题</h2><p>在这之前我的博客一直都部署github pages下面.好处主要是因为</p>
+<ul>
+<li>免费</li>
+<li>部署起来方便快速.</li>
+</ul>
+<p><strong>但是问题却有很多比如</strong>:</p>
+<ul>
+<li>访问速度略慢</li>
+<li>不稳定 , 经常访问超时</li>
+<li>不稳定造成 不利于seo 甚至百度不收录</li>
+</ul>
+<h2 id="解决办法-部署到-BAE"><a href="#解决办法-部署到-BAE" class="headerlink" title="解决办法 - 部署到 BAE"></a>解决办法 - 部署到 BAE</h2><h3 id="BAE的介绍与配置"><a href="#BAE的介绍与配置" class="headerlink" title="BAE的介绍与配置"></a>BAE的介绍与配置</h3><blockquote>
+<p><a href="https://cloud.baidu.com/product/bae.html" target="_blank" rel="external">BAE官方介绍</a> 简单来说BAE 可以提供一个支持git代码托管的静态服务器,每天只要一毛钱<br>当前这篇博客就托管在bae下, 5Mb/s的速度绝对够用, 速度嗖嗖嗖.</p>
+</blockquote>
+<h4 id="创建一个BAE项目"><a href="#创建一个BAE项目" class="headerlink" title="创建一个BAE项目"></a>创建一个BAE项目</h4><ul>
+<li><p>登录 <a href="https://console.bce.baidu.com" target="_blank" rel="external">百度云控制台</a></p>
+</li>
+<li><p>开通BAE<br><img src="http://cdn.netpi.me/blog/2r8ou.jpg?imageslim" alt="开通BAE"></p>
+</li>
+<li><p>创建一个bae项目<br><img src="http://cdn.netpi.me/blog/j72xf.jpg?imageslim" alt="创建一个bae项目"></p>
+</li>
+<li><p>选择light-static | <strong>这一步要注意,代码版本工具要选择git不要选svn</strong><br><img src="http://cdn.netpi.me/blog/apbxi.jpg?imageslim" alt="选择light-static"></p>
+</li>
+</ul>
+<h4 id="开启自动发布"><a href="#开启自动发布" class="headerlink" title="开启自动发布"></a>开启自动发布</h4><ul>
+<li>回到部署列表 点击项目名称<br><img src="http://cdn.netpi.me/blog/uaoke.jpg?imageslim" alt=""></li>
+<li>点击发布设置<br><img src="http://cdn.netpi.me/blog/bf3ow.jpg?imageslim" alt=""></li>
+<li>开启自动发不<br><img src="http://cdn.netpi.me/blog/eudkp.jpg?imageslim" alt=""></li>
+</ul>
+<h3 id="安装-hexo-deployer-git"><a href="#安装-hexo-deployer-git" class="headerlink" title="安装 hexo-deployer-git"></a>安装 <code>hexo-deployer-git</code></h3><p><code>npm install hexo-deployer-git --save</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">➜  hexo-bae-demo git:(master) npm install hexo-deployer-git --save</div><div class="line">hexo-site@0.0.0 /Users/night/code/videoplusplus/github/hexo-demo/hexo-bae-demo</div><div class="line">└── hexo-deployer-git@0.2.0</div></pre></td></tr></table></figure>
+<h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置  _config.yml"></a>配置  _config.yml</h3><p>编辑根目录下 _config.yml 添加<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: https://git.duapp.com/appid970bs422df </div><div class="line">  <span class="comment"># 这是你bae项目中的git地址 获取方法如下图</span></div></pre></td></tr></table></figure></p>
+<p><img src="http://cdn.netpi.me/blog/hds4g.jpg?imageslim" alt=""></p>
+<h3 id="部署到BAE"><a href="#部署到BAE" class="headerlink" title="部署到BAE"></a>部署到BAE</h3><p><code>$ hexo d</code> 直接部署到BAE</p>
+<blockquote>
+<p>第一次执行需要输入<code>帐号密码</code> - 分别是你<a href="https://cloud.baidu.com/" target="_blank" rel="external">百度云</a>的<code>帐号密码</code></p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">➜  hexo-bae-demo git:(master) ✗ hexo d</div><div class="line">    INFO  Deploying: git</div><div class="line">    INFO  Clearing .deploy_git folder...</div><div class="line">    INFO  Copying files from public folder...</div><div class="line">    On branch master</div><div class="line">    nothing to commit, working tree clean</div><div class="line">    To https://git.duapp.com/appid970bs422df</div><div class="line">    + d409e0c...af1773c HEAD -&gt; master (forced update)</div><div class="line">    Branch master <span class="built_in">set</span> up to track remote branch master from https://git.duapp.com/appid970bs422df.</div><div class="line">    INFO  Deploy <span class="keyword">done</span>: git</div></pre></td></tr></table></figure>
+<p>这一步中如果是以上结果那么恭喜你成功了</p>
+<p><strong>如果是以下结果</strong><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">➜  hexo-bae-demo git:(master) ✗ hexo d</div><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">On branch master</div><div class="line">nothing to commit, working tree clean</div><div class="line">error: RPC failed; HTTP 411 curl 22 The requested URL returned error: 411 Length Required</div><div class="line">fatal: The remote end hung up unexpectedly</div><div class="line">fatal: The remote end hung up unexpectedly</div></pre></td></tr></table></figure></p>
+<p><strong>原因是</strong> : 文件内容过大</p>
+<p>解决方案如下 :</p>
+<ul>
+<li>编辑 <code>.deploy_git/.git/config</code></li>
+<li>尾部加入如下代码<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[http]</div><div class="line">	postBuffer = 524288000</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>修改之后再执行 <code>hexo d</code> 问题解决<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">➜  hexo-bae-demo git:(master) ✗ vim .deploy_git/.git/config</div><div class="line">➜  hexo-bae-demo git:(master) ✗ hexo d</div><div class="line">INFO  Deploying: git</div><div class="line">INFO  Clearing .deploy_git folder...</div><div class="line">INFO  Copying files from public folder...</div><div class="line">On branch master</div><div class="line">nothing to commit, working tree clean</div><div class="line">To https://git.duapp.com/appid970bs422df</div><div class="line">   af1773c..6f2e504  HEAD -&gt; master</div><div class="line">Branch master <span class="built_in">set</span> up to track remote branch master from https://git.duapp.com/appid970bs422df.</div><div class="line">INFO  Deploy <span class="keyword">done</span>: git</div></pre></td></tr></table></figure></p>
+<h3 id="查看结果"><a href="#查看结果" class="headerlink" title="查看结果"></a>查看结果</h3><p><img src="http://cdn.netpi.me/blog/awvbm.jpg?imageslim" alt=""></p>
+<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><blockquote>
+<p>注 ：转载 请注明出处 <a href="http://www.netpi.me/code/hexo-bae-configure/">http://www.netpi.me/code/hexo-bae-configure/</a></p>
+</blockquote>
+<h2 id="感谢"><a href="#感谢" class="headerlink" title="感谢"></a>感谢</h2><blockquote>
+<p>如果这篇文章对你有帮助,请点击最上方广告一次 谢谢! </p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="netpi WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/code/" rel="tag">#code</a>
+          
+            <a href="/tags/hexo/" rel="tag">#hexo</a>
+          
+            <a href="/tags/BAE/" rel="tag">#BAE</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/uncategorized/gitrevoke/" rel="next" title="Git常用的撤销操作">
+                <i class="fa fa-chevron-left"></i> Git常用的撤销操作
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="code/hexo-bae-configure/" data-title="放弃github pages,把hexo博客部署到百度BAE吧" data-url="http://www.netpi.me/code/hexo-bae-configure/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="netpi">
+          <p class="site-author-name" itemprop="name">netpi</p>
+          <p class="site-description motion-element" itemprop="description">代码, 产品, 摄影, mac</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/netpi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#博客部署到Github-Pages的问题"><span class="nav-number">1.</span> <span class="nav-text">博客部署到Github Pages的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决办法-部署到-BAE"><span class="nav-number">2.</span> <span class="nav-text">解决办法 - 部署到 BAE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#BAE的介绍与配置"><span class="nav-number">2.1.</span> <span class="nav-text">BAE的介绍与配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个BAE项目"><span class="nav-number">2.1.1.</span> <span class="nav-text">创建一个BAE项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开启自动发布"><span class="nav-number">2.1.2.</span> <span class="nav-text">开启自动发布</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-hexo-deployer-git"><span class="nav-number">2.2.</span> <span class="nav-text">安装 hexo-deployer-git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-config-yml"><span class="nav-number">2.3.</span> <span class="nav-text">配置  _config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署到BAE"><span class="nav-number">2.4.</span> <span class="nav-text">部署到BAE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看结果"><span class="nav-number">2.5.</span> <span class="nav-text">查看结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#License"><span class="nav-number">3.</span> <span class="nav-text">License</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#感谢"><span class="nav-number">4.</span> <span class="nav-text">感谢</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">netpi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"netpi"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("0aLmykqteU8sXRpwNaUfbFUk-gzGzoHsz", "eVgpxMMWkpzX0aY8dfN4PBqy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>

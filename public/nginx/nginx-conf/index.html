@@ -1,0 +1,1098 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="nginx,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
+
+
+
+
+
+
+<meta name="description" content="Nigix 安装 使用 配置">
+<meta name="keywords" content="nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx 安装 启动 停止 重启">
+<meta property="og:url" content="http://www.netpi.me/nginx/nginx-conf/index.html">
+<meta property="og:site_name" content="东泽 - Netpi">
+<meta property="og:description" content="Nigix 安装 使用 配置">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300">
+<meta property="og:updated_time" content="2016-11-02T07:06:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx 安装 启动 停止 重启">
+<meta name="twitter:description" content="Nigix 安装 使用 配置">
+<meta name="twitter:image" content="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.netpi.me/nginx/nginx-conf/">
+
+
+  <title> Nginx 安装 启动 停止 重启 | 东泽 - Netpi </title>
+</head>
+
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
+  
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-61249489-3', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?df80594e333f3195cd13084356b208fc";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">东泽 - Netpi</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <!-- www.netpi.me -->
+              <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4499485001601213" data-ad-slot="1572502484" data-ad-format="auto"></ins>
+              <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+              </script>
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Nginx 安装 启动 停止 重启
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-01-03T07:50:11+08:00" content="2015-01-03">
+              2015-01-03
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">nginx</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/nginx/nginx-conf/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="nginx/nginx-conf/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/nginx/nginx-conf/" class="leancloud_visitors" data-flag-title="Nginx 安装 启动 停止 重启">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><blockquote class="blockquote-center"><br>Nigix 安装 使用 配置<br></blockquote><br><a id="more"></a></p>
+<h2 id="0-安装"><a href="#0-安装" class="headerlink" title="0 安装"></a>0 安装</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install software-properties-common</div><div class="line">sudo add-apt-repository ppa:nginx/stable</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install nginx</div></pre></td></tr></table></figure>
+<h2 id="2-启动-停止-重启"><a href="#2-启动-停止-重启" class="headerlink" title="2 启动,停止,重启"></a>2 启动,停止,重启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nginx -s signal</div></pre></td></tr></table></figure>
+<p>signal 的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">stop — 快速停止</div><div class="line">quit — 优雅的停止</div><div class="line">reload — 重启</div><div class="line">reopen — 重新打开日志文件</div></pre></td></tr></table></figure></p>
+<h2 id="3-关于配置文件"><a href="#3-关于配置文件" class="headerlink" title="3 关于配置文件"></a>3 关于配置文件</h2><h4 id="2-1-配置文件简单说明"><a href="#2-1-配置文件简单说明" class="headerlink" title="2.1 配置文件简单说明"></a>2.1 配置文件简单说明</h4><p>配置文件可以看做是Nginx的灵魂，Nginx服务在启动时会读入配置文件，而后续几乎一切动作行为都是按照配置文件中的指令进行的，因此如果将Nginx本身看做一个计算机，那么Nginx的配置文件可以看成是全部的程序指令。</p>
+<p>Nginx配置文件是纯文本文件，你可以用任何文本编辑器如vim或emacs打开它，通常它会在nginx安装目录的conf下</p>
+<p>其中“#”表示此行是注释，由于笔者为了学习扩展开发安装了一个纯净的Nginx，因此配置文件没有经过太多改动。</p>
+<p>Nginx的配置文件是以block的形式组织的，一个block通常使用大括号“{}”表示。block分为几个层级，整个配置文件为main层级，这是最大的层级；在main层级下可以有event、http等层级，而http中又会有server block，server block中可以包含location block。</p>
+<p>每个层级可以有自己的指令（Directive），例如worker_processes是一个main层级指令，它指定Nginx服务的Worker进程数量。有的指令只能在一个层级中配置，如worker_processes只能存在于main中，而有的指令可以存在于多个层级，在这种情况下，子block会继承父block的配置，同时如果子block配置了与父block不同的指令，则会覆盖掉父block的配置。指令的格式是“指令名 参数1  参数2 … 参数N;”，注意参数间可用任意数量空格分隔，最后要加分号。</p>
+<p>在开发Nginx HTTP扩展模块过程中，需要特别注意的是main、server和location三个层级，因为扩展模块通常允许指定新的配置指令在这三个层级中。</p>
+<p>一般来说，一个server block表示一个Host，而里面的一个location则代表一个路由映射规则，这两个block可以说是HTTP配置的核心。配置文件</p>
+<p>下图是Nginx配置文件通常结构图示。</p>
+<p><img src="http://bnetpi.qiniudn.com/nginx/1.png?imageView2/2/w/300" alt=""></p>
+<h3 id="2-2-主模块"><a href="#2-2-主模块" class="headerlink" title="2.2 主模块"></a>2.2 主模块</h3><blockquote>
+<p>控制 Nginx 的基本功能的指令.</p>
+</blockquote>
+<h4 id="2-2-1-daemon"><a href="#2-2-1-daemon" class="headerlink" title="2.2.1 daemon"></a>2.2.1 daemon</h4><p>语法: daemon on | off</p>
+<p>默认值: on</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">daemon  off;</div></pre></td></tr></table></figure>
+<p>生产环境中不要使用”daemon”和”master_process”指令，这些选项仅用于开发调试。</p>
+<h4 id="2-2-2-debug-points"><a href="#2-2-2-debug-points" class="headerlink" title="2.2.2  debug_points"></a>2.2.2  debug_points</h4><p>语法: debug_points [stop | abort]</p>
+<p>默认值: none</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">debug_points stop;</div></pre></td></tr></table></figure>
+<h4 id="2-2-3-error-log"><a href="#2-2-3-error-log" class="headerlink" title="2.2.3 error_log"></a>2.2.3 error_log</h4><p>语法: error_log file [ debug | info | notice | warn | error | crit ]</p>
+<p>默认值: ${prefix}/logs/error.log</p>
+<p>Nginx 添加 –with-debug 编译参数, 你还能够使用以下配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">error_log LOGFILE [ debug_core | debug_alloc | debug_mutex | debug_event</div><div class="line">]: | debug_http | debug_imap ;</div></pre></td></tr></table></figure>
+<h4 id="2-2-4-include"><a href="#2-2-4-include" class="headerlink" title="2.2.4 include"></a>2.2.4 include</h4><p>语法: include file | *</p>
+<p>默认值: none</p>
+<p>你可以在任意地方使用include指令实现配置文件的包含，类似于apache中的include方法，可减少主配置文件d。</p>
+<p>include 指令还支持像下面配置一样的全局包含的方法，例如包含一个目录下所有以”.conf”结尾的文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">include vhosts/*.conf;</div></pre></td></tr></table></figure></p>
+<p>注意路径受到configure编译参数–prefix=&lt;路径&gt;指令的影响，如果没有指定，Nginx默认是被编译在/usr/local/nginx。</p>
+<p>语法: lock_file file</p>
+<p>默认值: compile-time option<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">lock_file  /var/log/lock_file;</div></pre></td></tr></table></figure></p>
+<h4 id="2-2-5-master-process"><a href="#2-2-5-master-process" class="headerlink" title="2.2.5 master_process"></a>2.2.5 master_process</h4><p>语法: master_process on | off</p>
+<p>默认值: on<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">master_process  off;</div></pre></td></tr></table></figure></p>
+<p>生产环境中不要使用”daemon”和”master_process”指令，这些选项仅用于开发调试。</p>
+<h4 id="2-2-6-pid"><a href="#2-2-6-pid" class="headerlink" title="2.2.6 pid"></a>2.2.6 pid</h4><p>语法: pid file</p>
+<p>默认值: compile-time option Example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pid /var/log/nginx.pid;</div></pre></td></tr></table></figure>
+<p>进程id存储文件。可以使用 kill -HUP cat /var/log/nginx.pid\ 对Nginx进行配置文件重新加载。</p>
+<h4 id="2-2-7-ssl-engine"><a href="#2-2-7-ssl-engine" class="headerlink" title="2.2.7 ssl_engine"></a>2.2.7 ssl_engine</h4><p>语法: ssl_engine engine</p>
+<p>默认值: system dependent</p>
+<p>该指令用于指定openssl使用的引擎。你可以通过下面的命令行获知系统目前支持的openssl引擎</p>
+<p>openssl engine -t</p>
+<p>例如 :<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ openssl engine -t</div><div class="line">(cryptodev) BSD cryptodev engine</div><div class="line">: [ available ]</div><div class="line">(dynamic) Dynamic engine loading support</div><div class="line">: [ unavailable ]</div></pre></td></tr></table></figure></p>
+<h4 id="2-2-8-timer-resolution"><a href="#2-2-8-timer-resolution" class="headerlink" title="2.2.8 timer_resolution"></a>2.2.8 timer_resolution</h4><p>语法: timer_resolution t</p>
+<p>默认值: none</p>
+<p>Example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">timer_resolution  100ms;</div></pre></td></tr></table></figure></p>
+<p>官方文档的说明:</p>
+<p>The directive allows to decrease number gettimeofday() syscalls. By default gettimeofday() is called after each return from kevent(), epoll, /dev/poll, select(), poll().</p>
+<p>But if you need an exact time in logs when logging $upstream_response_time, or $msec variables, then you should use timer_resolution.</p>
+<h4 id="2-2-9-user"><a href="#2-2-9-user" class="headerlink" title="2.2.9 user"></a>2.2.9 user</h4><p>语法: user user [group]</p>
+<p>默认值: nobody nobody</p>
+<p>指定Nginx Worker进程运行用户，默认是nobody帐号。</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">user www users;</div></pre></td></tr></table></figure>
+<h4 id="2-2-10-worker-cpu-affinity"><a href="#2-2-10-worker-cpu-affinity" class="headerlink" title="2.2.10 worker_cpu_affinity"></a>2.2.10 worker_cpu_affinity</h4><p>语法: worker_cpu_affinity cpumask [cpumask…]</p>
+<p>默认值: none</p>
+<p>Linux only.</p>
+<p>With this option you can bind the worker process to a CPU, it calls sched_setaffinity().</p>
+<p>仅适用于linux，使用该选项可以绑定worker进程和CPU.</p>
+<p>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">worker_proceses     4;</div><div class="line">worker_cpu_affinity 0001 0010 0100 1000;</div></pre></td></tr></table></figure></p>
+<p>Bind each worker process to one CPU only.</p>
+<p>分别给每个worker进程绑定一个CPU.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">worker_proceses     2;</div><div class="line">worker_cpu_affinity 0101 1010;</div></pre></td></tr></table></figure>
+<p>Bind the first worker to CPU0/CPU2, bind the second worker to CPU1/CPU3. This is suitable for HTT.</p>
+<p>将CPU0/CPU2绑定给第一个worker进程，将CPU1/CPU3绑定给第二个worker进程。</p>
+<h4 id="2-2-11-worker-priority"><a href="#2-2-11-worker-priority" class="headerlink" title="2.2.11 worker_priority"></a>2.2.11 worker_priority</h4><p>语法: worker_priority [-] number</p>
+<p>默认值: on</p>
+<p>With this option you can give to all worker processes the priority (nice) you need/wish, it calls setpriority().</p>
+<p>使用该选项可以给所有的worker进程分配优先值。</p>
+<h4 id="2-2-12-worker-processes"><a href="#2-2-12-worker-processes" class="headerlink" title="2.2.12 worker_processes"></a>2.2.12 worker_processes</h4><p>语法: worker_processes number</p>
+<p>默认值: 1</p>
+<p>e.g.:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">worker_processes 5;</div></pre></td></tr></table></figure>
+<p>nginx has the ability to use more than one worker process for several reasons:</p>
+<p>nginx可以使用多个worker进程，原因如下：</p>
+<pre><code>1.to use SMP
+2.to decrease latency when workers blockend on disk I/O
+3.to limit number of connections per process when select()/poll() is used
+</code></pre><p>The worker_processes and worker_connections from the event sections allows you to calculate maxclients value: k</p>
+<p>max_clients = worker_processes * worker_connections</p>
+<h4 id="2-2-13-worker-rlimit-core"><a href="#2-2-13-worker-rlimit-core" class="headerlink" title="2.2.13 worker_rlimit_core"></a>2.2.13 worker_rlimit_core</h4><p>语法: worker_rlimit_core size</p>
+<p>默认值: ‘</p>
+<p>Maximum size of core file per worker;</p>
+<h4 id="2-2-14-worker-rlimit-nofile"><a href="#2-2-14-worker-rlimit-nofile" class="headerlink" title="2.2.14 worker_rlimit_nofile"></a>2.2.14 worker_rlimit_nofile</h4><p>语法: worker_rlimit_nofile limit 默认值: ‘</p>
+<p>Specifies the value for maximum file descriptors that can be opened by this process.</p>
+<p>指定</p>
+<h4 id="2-2-15-worker-rlimit-sigpending"><a href="#2-2-15-worker-rlimit-sigpending" class="headerlink" title="2.2.15 worker_rlimit_sigpending"></a>2.2.15 worker_rlimit_sigpending</h4><p>语法: worker_rlimit_sigpending limit 默认值: ‘</p>
+<p>(Since Linux 2.6.8) Specifies the limit on the number of signals that may be queued for the real user ID of the calling process.</p>
+<h4 id="2-2-16-working-directory"><a href="#2-2-16-working-directory" class="headerlink" title="2.2.16 working_directory"></a>2.2.16 working_directory</h4><p>语法: working_directory path 默认值: –prefix</p>
+<p>This is the working directory for the workers. It’s used for core files only. nginx uses absolute paths only, all relative paths in configuration files are relative to –prefix==PATH.</p>
+<h3 id="2-3-事件模块"><a href="#2-3-事件模块" class="headerlink" title="2.3 事件模块"></a>2.3 事件模块</h3><blockquote>
+<p>设置Nginx处理连接请求<br>e.g.:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">events &#123;</div><div class="line">    worker_connections  1024;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="2-3-1-accept-mutex"><a href="#2-3-1-accept-mutex" class="headerlink" title="2.3.1 accept_mutex"></a>2.3.1 accept_mutex</h4><p>Syntax: accept_mutex [ on | off ]</p>
+<p>Default: on</p>
+<p>nginx 使用连接互斥锁进行顺序的accept()系统调用.</p>
+<h4 id="2-3-2-accept-mutex-delay"><a href="#2-3-2-accept-mutex-delay" class="headerlink" title="2.3.2 accept_mutex_delay"></a>2.3.2 accept_mutex_delay</h4><p>Syntax: accept_mutex_delay Nms;</p>
+<p>Default: 500ms</p>
+<p>如果一个进程没有互斥锁，它将延迟至少多长时间。默认情况下，延迟是500ms 。</p>
+<h4 id="2-3-3-use"><a href="#2-3-3-use" class="headerlink" title="2.3.3 use"></a>2.3.3 use</h4><p>Syntax: use [ kqueue | rtsig | epoll | /dev/poll | select | poll | eventport ]</p>
+<p>Default:</p>
+<p>如果在./configure的时候指定了不止一种事件模型，那么可以设置其中一个，以便告诉nginx使用哪种事件模型。默认情况下nginx会在./configure时找出最适合系统的事件模型。</p>
+<p>你可以在 这里 查看可用的事件模型以及如何在./configure时激活</p>
+<h4 id="2-3-4-worker-connections"><a href="#2-3-4-worker-connections" class="headerlink" title="2.3.4 worker_connections"></a>2.3.4 worker_connections</h4><p>Syntax: worker_connections number</p>
+<p>Default:</p>
+<p>通过worker_connections和worker_proceses可以计算出maxclients：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_clients = worker_processes * worker_connections</div></pre></td></tr></table></figure></p>
+<p>作为反向代理，max_clients为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">max_clients = worker_processes * worker_connections/4</div></pre></td></tr></table></figure></p>
+<p>Since a browser opens 2 connections by default to a server and nginx uses the fds (file descriptors) from the same pool to connect to the upstream backend</p>
+<blockquote>
+<p>注 ：转载 请注明出处 <a href="http://blog.netpi.me/nginx/nginx-conf/" target="_blank" rel="external">http://blog.netpi.me/nginx/nginx-conf/</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div></div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/wechatpay.jpg" alt="netpi WeChat Pay">
+          <p>微信打赏</p>
+        </div>
+      
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/nginx/" rel="tag">#nginx</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/nodejs/ueditor-nodejs/" rel="next" title="ueditor:nodejs">
+                <i class="fa fa-chevron-left"></i> ueditor:nodejs
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/nodejs/Dota2-Api-nodejs/" rel="prev" title="Dota2 Api nodejs">
+                Dota2 Api nodejs <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="nginx/nginx-conf/" data-title="Nginx 安装 启动 停止 重启" data-url="http://www.netpi.me/nginx/nginx-conf/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="netpi">
+          <p class="site-author-name" itemprop="name">netpi</p>
+          <p class="site-description motion-element" itemprop="description">代码, 产品, 摄影, mac</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://github.com/netpi" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://cn.linkedin.com/in/东泽-陈-8a7984109" target="_blank" title="linkedin">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  linkedin
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element" itemprop="license">
+            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+            </a>
+          </div>
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情连接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://joehill.me" title="Joehill" target="_blank">Joehill</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-安装"><span class="nav-number">1.</span> <span class="nav-text">0 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动-停止-重启"><span class="nav-number">2.</span> <span class="nav-text">2 启动,停止,重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-关于配置文件"><span class="nav-number">3.</span> <span class="nav-text">3 关于配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-配置文件简单说明"><span class="nav-number">3.0.1.</span> <span class="nav-text">2.1 配置文件简单说明</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-主模块"><span class="nav-number">3.1.</span> <span class="nav-text">2.2 主模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-1-daemon"><span class="nav-number">3.1.1.</span> <span class="nav-text">2.2.1 daemon</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-2-debug-points"><span class="nav-number">3.1.2.</span> <span class="nav-text">2.2.2  debug_points</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-3-error-log"><span class="nav-number">3.1.3.</span> <span class="nav-text">2.2.3 error_log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-4-include"><span class="nav-number">3.1.4.</span> <span class="nav-text">2.2.4 include</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-5-master-process"><span class="nav-number">3.1.5.</span> <span class="nav-text">2.2.5 master_process</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-6-pid"><span class="nav-number">3.1.6.</span> <span class="nav-text">2.2.6 pid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-7-ssl-engine"><span class="nav-number">3.1.7.</span> <span class="nav-text">2.2.7 ssl_engine</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-8-timer-resolution"><span class="nav-number">3.1.8.</span> <span class="nav-text">2.2.8 timer_resolution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-9-user"><span class="nav-number">3.1.9.</span> <span class="nav-text">2.2.9 user</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-10-worker-cpu-affinity"><span class="nav-number">3.1.10.</span> <span class="nav-text">2.2.10 worker_cpu_affinity</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-11-worker-priority"><span class="nav-number">3.1.11.</span> <span class="nav-text">2.2.11 worker_priority</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-12-worker-processes"><span class="nav-number">3.1.12.</span> <span class="nav-text">2.2.12 worker_processes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-13-worker-rlimit-core"><span class="nav-number">3.1.13.</span> <span class="nav-text">2.2.13 worker_rlimit_core</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-14-worker-rlimit-nofile"><span class="nav-number">3.1.14.</span> <span class="nav-text">2.2.14 worker_rlimit_nofile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-15-worker-rlimit-sigpending"><span class="nav-number">3.1.15.</span> <span class="nav-text">2.2.15 worker_rlimit_sigpending</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-16-working-directory"><span class="nav-number">3.1.16.</span> <span class="nav-text">2.2.16 working_directory</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-事件模块"><span class="nav-number">3.2.</span> <span class="nav-text">2.3 事件模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-1-accept-mutex"><span class="nav-number">3.2.1.</span> <span class="nav-text">2.3.1 accept_mutex</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-2-accept-mutex-delay"><span class="nav-number">3.2.2.</span> <span class="nav-text">2.3.2 accept_mutex_delay</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-3-use"><span class="nav-number">3.2.3.</span> <span class="nav-text">2.3.3 use</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-worker-connections"><span class="nav-number">3.2.4.</span> <span class="nav-text">2.3.4 worker_connections</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">netpi</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"netpi"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = false;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = decodeURIComponent(data.url);
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title >= 0 || index_content >= 0 ){
+                                isMatch = true;
+								if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            } 
+							
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("0aLmykqteU8sXRpwNaUfbFUk-gzGzoHsz", "eVgpxMMWkpzX0aY8dfN4PBqy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+
+</body>
+</html>
