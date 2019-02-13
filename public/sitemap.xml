@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.netpi.me/uncategorized/baidu-ocr-nodejs/</loc>
+    <lastmod>2019-02-13</lastmod>
+  </url>  <url>
+    <loc>http://www.netpi.me/uncategorized/gitrevoke/</loc>
+    <lastmod>2019-02-13</lastmod>
+  </url>  <url>
     <loc>http://www.netpi.me/%E5%AE%9E%E7%94%A8/hexo/</loc>
     <lastmod>2017-01-31</lastmod>
   </url>  <url>
     <loc>http://www.netpi.me/nodejs/ueditor-nodejs/</loc>
     <lastmod>2017-01-22</lastmod>
-  </url>  <url>
-    <loc>http://www.netpi.me/uncategorized/gitrevoke/</loc>
-    <lastmod>2017-01-21</lastmod>
-  </url>  <url>
-    <loc>http://www.netpi.me/uncategorized/baidu-ocr-nodejs/</loc>
-    <lastmod>2016-11-02</lastmod>
   </url>
 </urlset>
