@@ -370,13 +370,13 @@
 <li>支持 shell/nodejs 全局安装可在控制台直接运行</li>
 <li>bluebird/promise 接口操作灵活</li>
 </ul>
-<h3 id="Install-amp-Usage"><a href="#Install-amp-Usage" class="headerlink" title="Install &amp; Usage"></a>Install &amp; Usage</h3><h4 id="1-Global"><a href="#1-Global" class="headerlink" title="1. Global"></a>1. Global</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">npm install baidu-ocr-api -g</div><div class="line"></div><div class="line">ocr --help</div><div class="line"></div><div class="line"><span class="comment"># 远程图片</span></div><div class="line">ocr http://7pun4e.com1.z0.glb.clouddn.com/test.jpg</div><div class="line"></div><div class="line"><span class="comment"># 本地图片</span></div><div class="line">ocr ./test.jpg</div></pre></td></tr></table></figure>
+<h3 id="Install-amp-Usage"><a href="#Install-amp-Usage" class="headerlink" title="Install &amp; Usage"></a>Install &amp; Usage</h3><h4 id="1-Global"><a href="#1-Global" class="headerlink" title="1. Global"></a>1. Global</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install baidu-ocr-api -g</span><br><span class="line"></span><br><span class="line">ocr --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 远程图片</span></span><br><span class="line">ocr http://7pun4e.com1.z0.glb.clouddn.com/test.jpg</span><br><span class="line"></span><br><span class="line"><span class="comment"># 本地图片</span></span><br><span class="line">ocr ./test.jpg</span><br></pre></td></tr></table></figure>
 <h5 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h5><p><img src="https://raw.githubusercontent.com/netpi/baidu-ocr-api/master/examples/test01.jpg" alt=""></p>
 <p>   的早期世界观是建立在《魔兽争霸3：冰封王座》的基础上的，因此与现在暴雪公司的《魔兽世界》的背景设定有一定的联系，但由于版本更迭又略有不同。整个地图中地形名费伍德森林，费伍德森林是网络游戏《魔兽世界》中的游戏地图，位于卡利姆多境内的一片森林。这片由森林和草场构成的繁荣动荡的土地曾经由卡尔多雷掌管，并曾经处于半神塞纳留斯的保护下。燃烧军团的铁蹄践踏了这片土地，没有被毁灭的树木和生物则被恶魔的暴行永远的诅咒着</p>
-<h4 id="2-Nodejs"><a href="#2-Nodejs" class="headerlink" title="2. Nodejs"></a>2. Nodejs</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install baidu-ocr-api --save</div></pre></td></tr></table></figure>
-<p>FYI <a href="https://github.com/netpi/baidu-ocr-api/tree/master/examples" target="_blank" rel="external">examples</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"></div><div class="line">登陆 百度bcs控制台中心 申请access key</div><div class="line">https://console.bce.baidu.com/iam/#/iam/accesslist</div><div class="line"></div><div class="line">**/</div><div class="line"><span class="keyword">var</span> ak = <span class="string">'your ak'</span>;</div><div class="line"><span class="keyword">var</span> sk = <span class="string">'your sk'</span>;</div><div class="line"><span class="keyword">var</span> ocr = <span class="built_in">require</span>(<span class="string">'baidu-ocr-api'</span>).create(ak,sk);</div><div class="line"><span class="comment">// 外部图片</span></div><div class="line">ocr.scan(&#123;</div><div class="line">  <span class="attr">url</span>:<span class="string">'http://7pun4e.com1.z0.glb.clouddn.com/test.jpg'</span>, <span class="comment">// 支持本地路径</span></div><div class="line">  type:<span class="string">'text'</span>,</div><div class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">console</span>.log(result)</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'err'</span>, err);</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
-<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">make <span class="built_in">test</span></div><div class="line">make cov <span class="comment"># Coverage rate</span></div></pre></td></tr></table></figure>
+<h4 id="2-Nodejs"><a href="#2-Nodejs" class="headerlink" title="2. Nodejs"></a>2. Nodejs</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install baidu-ocr-api --save</span><br></pre></td></tr></table></figure>
+<p>FYI <a href="https://github.com/netpi/baidu-ocr-api/tree/master/examples" target="_blank" rel="noopener">examples</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">登陆 百度bcs控制台中心 申请access key</span></span><br><span class="line"><span class="comment">https://console.bce.baidu.com/iam/#/iam/accesslist</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">var</span> ak = <span class="string">'your ak'</span>;</span><br><span class="line"><span class="keyword">var</span> sk = <span class="string">'your sk'</span>;</span><br><span class="line"><span class="keyword">var</span> ocr = <span class="built_in">require</span>(<span class="string">'baidu-ocr-api'</span>).create(ak,sk);</span><br><span class="line"><span class="comment">// 外部图片</span></span><br><span class="line">ocr.scan(&#123;</span><br><span class="line">  url:<span class="string">'http://7pun4e.com1.z0.glb.clouddn.com/test.jpg'</span>, <span class="comment">// 支持本地路径</span></span><br><span class="line">  type:<span class="string">'text'</span>,</span><br><span class="line">&#125;).then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">console</span>.log(result)</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'err'</span>, err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make <span class="built_in">test</span></span><br><span class="line">make cov <span class="comment"># Coverage rate</span></span><br></pre></td></tr></table></figure>
 <h3 id="License-MIT"><a href="#License-MIT" class="headerlink" title="License MIT"></a>License MIT</h3>
       
     </div>
@@ -426,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/iOS/PokemonGo/" rel="next" title="最快捷 PokemonGo 安装教程 - 解决了锁区问题">
-                <i class="fa fa-chevron-left"></i> 最快捷 PokemonGo 安装教程 - 解决了锁区问题
+              <a href="/nodejs/ueditor-nodejs/" rel="next" title="ueditor:nodejs">
+                <i class="fa fa-chevron-left"></i> ueditor:nodejs
               </a>
             
           </div>
@@ -505,7 +505,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -513,7 +513,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -522,7 +522,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
