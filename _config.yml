@@ -87,8 +87,8 @@ baidusitemap:
 	path: sitemap.xml
 
 deploy:
-  type: git
-  repo: git@git.coding.net:netpi/pub.git
+  type: heroku
+  repo: git@github.com:netpi/eurychen.git
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
